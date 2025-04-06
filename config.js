@@ -7,7 +7,7 @@ global.botnumber = "" //Inserisci nelle apici il numero del bot (es. +3937620304
 global.confirmCode = ""
 
 global.owner = [
-    ['393762030481', 'Proprietario', true],
+    ['393405124434', 'Proprietario', true],
 ] //Numero degli owner
 
 //────────────────────────────
