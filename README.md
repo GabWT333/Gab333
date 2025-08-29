@@ -10,7 +10,7 @@
 
 ---
 
-## 📊 **Statistiche Repository**
+## 📊 **Statistiche Repository OFF**
 
 <div align="center">
 
