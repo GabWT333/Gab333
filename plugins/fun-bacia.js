@@ -1,51 +1,33 @@
-let handler = async (m, { conn, usedPrefix, command, text }) => {
-    let who;
-
-    // Determina chi abbracciare, se è un gruppo o una chat privata
-    if (m.isGroup) {
-        who = m.mentionedJid[0] 
-            ? m.mentionedJid[0] 
-            : m.quoted ? m.quoted.sender 
-            : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' 
-            : false;
-    } else {
-        who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat;
+let handler = async (m, { conn, text, participants, command, usedPrefix }) => {
+    // Se non è stato menzionato nessuno, verifica se il messaggio è una risposta
+    if (!text) {
+        if (m.quoted && m.quoted.sender) {
+            text = '@' + m.quoted.sender.split('@')[0];
+        } else {
+            return conn.reply(m.chat, ` Devi menzionare qualcuno o rispondere a un messaggio per baciarlo💋! Esempio: ${usedPrefix + command} @utente`, m);
+        }
     }
 
-    // Controlla se la persona da abbracciare è valida
-    if (!who) return m.reply(`𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐥𝐚 𝐩𝐞𝐫𝐬𝐨𝐧𝐚 𝐝𝐚 𝐛𝐚𝐜𝐢𝐚𝐫𝐞 💋`);
+    // Prende gli utenti menzionati nel messaggio
+    let utentiMenzionati = m.mentionedJid;
 
-    // Recupera la miniatura e la scritta personalizzata
-    const thumbnailUrl = "https://telegra.ph/file/c38c74851520adb48b684.png"; // URL dell'immagine in miniatura
-    const thumbnailBuffer = await (await fetch(thumbnailUrl)).buffer();
-    const thumbnailText = "𝐁𝐀𝐂𝐈𝐎"; // Testo miniatura compatibile
+    // Se non ci sono menzionati e non è una risposta, usa il sender del messaggio citato
+    if (!utentiMenzionati.length && m.quoted && m.quoted.sender) {
+        utentiMenzionati = [m.quoted.sender];
+    }
 
-    // Invia il messaggio dell'abbraccio con l'immagine in miniatura e la scritta
-    let abrazo = await conn.sendMessage(m.chat, {
-        text: `══════•⊰✰⊱•══════
-@${who.split('@')[0]} 𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐛𝐚𝐜𝐢𝐚𝐭𝐨/𝐚 𝐝𝐚 @${m.sender.split('@')[0]}
-══════•⊰✰⊱•══════`,
-        mentions: [who, m.sender],
-    }, {
-        quoted: {
-            key: {
-                participants: "0@s.whatsapp.net",
-                fromMe: false,
-                id: "Halo",
-            },
-            message: {
-                locationMessage: {
-                    name: thumbnailText, // Scritta in miniatura compatibile
-                    jpegThumbnail: thumbnailBuffer, // Immagine in miniatura
-                },
-            },
-            participant: "0@s.whatsapp.net",
-        },
-    });
+    // Se ancora non c'è nessuno da baciare
+    if (!utentiMenzionati.length) {
+        return m.reply("💋 *Devi menzionare qualcuno per baciarlo!*\nEsempio: *.bacia @utente*");
+    }
 
-    // Aggiungi la reazione all'abbraccio (emoji testata)
-    conn.sendMessage(m.chat, { react: { text: '', key: abrazo.key } });
+    let utenteBaciato = utentiMenzionati[0];
+
+    // Messaggio del bacio
+    let messaggio = `💋 *${await conn.getName(m.sender)} ha dato un bacio a ${await conn.getName(utenteBaciato)}!* 😘`;
+
+    await conn.sendMessage(m.chat, { text: messaggio, mentions: [utenteBaciato] }, { quoted: m });
 };
 
-handler.command = ['bacia'];
+handler.command = ["bacia"];
 export default handler;

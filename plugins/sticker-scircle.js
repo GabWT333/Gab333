@@ -12,6 +12,6 @@ conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, { asSticker: true })
 } catch (e) {
 
 }}
-handler.command = /^pakistanodimerdamuoridicancro2$/i
+handler.command = /^scircle|circle$/i
 export default handler
 /* `https://api.dhamzxploit.my.id/api/canvas/circle?url=${url}` */

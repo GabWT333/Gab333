@@ -1,53 +1,49 @@
-import os from 'os';
-import util from 'util';
-import sizeFormatter from 'human-readable';
-import MessageType from '@whiskeysockets/baileys';
-import fs from 'fs';
-import { performance } from 'perf_hooks';
+import { performance } from 'perf_hooks'
 
-let handler = async (m, { conn, usedPrefix, text }) => {
-    let _uptime = process.uptime() * 1000;
-    let uptime = clockString(_uptime);
-    let old = performance.now();
-    let neww = performance.now();
-    let speed = (neww - old).toFixed(4);
+let handler = async (m, { conn, text }) => {
+  let nomeDelBot = global.db.data.nomedelbot || `𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲`
 
-    // Messaggio iniziale
-    let { key } = await conn.sendMessage(m.chat, { text: "💥 Preparati, il motore si scalda... 💥" }, { quoted: m });
+  // Identifica il destinatario: risposto o menzionato
+  let destinatario;
+  if (m.quoted && m.quoted.sender) {
+    destinatario = m.quoted.sender;
+  } else if (m.mentionedJid && m.mentionedJid.length > 0) {
+    destinatario = m.mentionedJid[0];
+  } else {
+    return m.reply("Tagga qualcuno o rispondi a un messaggio per segarlo 😏");
+  }
 
-    // Animazione simulata
-    const array = [
-        "8==👊==D", "8===👊=D", "8=👊===D", "8==👊==D", 
-        "8===👊=D", "8=👊===D", "8==👊==D💦", "8===👊=D💦",
-        "8=👊===D💦", "8===👊=D💦💦"
-    ];
+  let nomeDestinatario = `@${destinatario.split('@')[0]}`
 
-    for (let item of array) {
-        await conn.sendMessage(m.chat, { text: `${item}`, edit: key }, { quoted: m });
-        await new Promise(resolve => setTimeout(resolve, 500)); // Delay 500ms
-    }
+  // Messaggio iniziale
+  let { key } = await conn.sendMessage(m.chat, { 
+    text: `Ora sego ${nomeDestinatario}...`,
+    mentions: [destinatario]
+  }, { quoted: m })
 
-    // Messaggio finale
-    let finale = `
-━━━━━━━━━━━━━━━━━━━━━
-😋 *Oh ${text} ha raggiunto il culmine!* 💦
-━━━━━━━━━━━━━━━━━━━━━
-🕒 *Uptime bot:* ${uptime}
-⚡ *Velocità risposta:* ${speed} ms
-`.trim();
+  const array = [
+    "8===👊=D", "8=👊===D", "8==👊==D", "8===👊=D", "8===👊=D💦"
+  ]
 
-    return conn.sendMessage(m.chat, { text: finale, edit: key, mentions: [m.sender] }, { quoted: m });
-};
+  for (let item of array) {
+    await conn.sendMessage(m.chat, { 
+      text: `${item}`, 
+      edit: key,
+      mentions: [destinatario]
+    }, { quoted: m })
+    await new Promise(resolve => setTimeout(resolve, 20))
+  }
 
-handler.help = ['infobot', 'speed'];
-handler.tags = ['info', 'tools'];
-handler.command = /^(sega)$/i;
-
-export default handler;
-
-function clockString(ms) {
-    let h = Math.floor(ms / 3600000);
-    let m = Math.floor(ms / 60000) % 60;
-    let s = Math.floor(ms / 1000) % 60;
-    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':');
+  // Messaggio finale
+  return conn.sendMessage(m.chat, { 
+    text: `Oh ${nomeDestinatario} ha sborrato! 😋💦`,
+    edit: key,
+    mentions: [destinatario]
+  }, { quoted: m })
 }
+
+handler.help = ['sega']
+handler.tags = ['fun']
+handler.command = /^(sega)$/i
+
+export default handler

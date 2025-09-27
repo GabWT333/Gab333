@@ -1,30 +1,25 @@
-let handler = async (m, { conn, command, text, isOwner }) => {
-    // Controlla se il messaggio è inviato da un owner
-    let percentage = isOwner ? 100 : Math.floor(Math.random() * 101);
-
-    // Frase finale basata sulla percentuale
-    let finalPhrase = percentage === 100 
-        ? "💘 *È destino! Il vero amore esiste.*" 
-        : percentage >= 50 
-        ? "💌 *Ora che aspetti, dichiarati subito!*" 
-        : "😕 *Magari non è la persona giusta.*";
-
-    // Messaggio completo
-    let love = `
-━━━━━━━━━━━━━━━━━━━━━━━
-💖 *CALCOLATORE DI AMORE* 💖
-━━━━━━━━━━━━━━━━━━━━━━━
-💕 *Affinità tra te e* ${text}:    
-✨ *${percentage}%* di compatibilità! ✨
-━━━━━━━━━━━━━━━━━━━━━━━
-${finalPhrase}
-`.trim();
-
-    m.reply(love, null, { mentions: conn.parseMention(love) });
-};
-
-handler.help = ['love'];
-handler.tags = ['fun'];
-handler.command = /^(love|amore)$/i;
-
-export default handler;
+let handler = async (m, { conn, command, text }) => {
+    let love = `︶︶ ⊹ ︶︶ ⊹ ︶︶︶ ୨♡୧ ︶︶︶ ⊹ ︶︶ ⊹ ︶︶\n𝐂𝐀𝐋𝐂𝐎𝐋𝐀𝐓𝐎𝐑𝐄 𝐃𝐈 𝐀𝐌𝐎𝐑𝐄 ❤️\nAffinità tra ${text} e te: ${Math.floor(Math.random() * 100)}%\n︶︶ ⊹ ︶︶ ⊹ ︶︶︶ ୨♡୧ ︶︶︶ ⊹ ︶︶ ⊹ ︶︶`.trim()
+    
+    // Get bot name from database or use default
+    let nomeDelBot = global.db.data.nomedelbot || `𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲`
+  
+    await conn.sendMessage(m.chat, { 
+      text: love,
+      contextInfo: {
+        mentionedJid: conn.parseMention(love),
+        forwardingScore: 99,
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: '120363422724720651@newsletter',
+          serverMessageId: '',
+          newsletterName: `${nomeDelBot}`
+        }
+      }
+    }, { quoted: m })
+  }
+  
+  handler.help = ['love']
+  handler.tags = ['fun']
+  handler.command = /^(love|amore)$/i
+  export default handler

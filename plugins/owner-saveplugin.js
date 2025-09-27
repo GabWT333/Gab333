@@ -1,1 +1,20 @@
-const _0x40c8d9=_0x1c22;function _0x2cd7(){const _0x3524e9=['52cfPUxw','https://telegra.ph/file/876cc3f192ec040e33aba.png','2649900FrVNoK','saveplugin','chat','quoted','map','1839170lAkhCj','buffer','rowner','5698908KVfQsv','5332320GTjViz','reply','\x20<nombre>','help','𝐈𝐧𝐬𝐞𝐫𝐢𝐬𝐜𝐢\x20𝐢𝐥\x20𝐧𝐨𝐦𝐞\x20𝐝𝐞𝐥\x20𝐩𝐥𝐮𝐠𝐢𝐧\x20𝐝𝐚\x20𝐬𝐚𝐥𝐯𝐚𝐫𝐞','1416399JrNgYV','BEGIN:VCARD\x0aVERSION:3.0\x0aN:;Unlimited;;;\x0aFN:Unlimited\x0aORG:Unlimited\x0aTITLE:\x0aitem1.TEL;waid=19709001746:+1\x20(970)\x20900-1746\x0aitem1.X-ABLabel:Unlimited\x0aX-WA-BIZ-DESCRIPTION:ofc\x0aX-WA-BIZ-NAME:Unlimited\x0aEND:VCARD','writeFileSync','4quHuAa','43068qTyZEg','tags','command','0@s.whatsapp.net','𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢\x20𝐚𝐥\x20𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨','owner','text','𝐈𝐥\x20𝐩𝐥𝐮𝐠𝐢𝐧\x20𝐞\x27\x20𝐬𝐭𝐚𝐭𝐨\x20𝐬𝐚𝐥𝐯𝐚𝐭𝐨','8428854OljVZg','.js'];_0x2cd7=function(){return _0x3524e9;};return _0x2cd7();}(function(_0xe848de,_0x12dea2){const _0x32b293=_0x1c22,_0x1228d5=_0xe848de();while(!![]){try{const _0x399bf4=parseInt(_0x32b293(0x20e))/0x1*(parseInt(_0x32b293(0x204))/0x2)+-parseInt(_0x32b293(0x200))/0x3*(-parseInt(_0x32b293(0x203))/0x4)+-parseInt(_0x32b293(0x1f7))/0x5+-parseInt(_0x32b293(0x210))/0x6+parseInt(_0x32b293(0x20c))/0x7+-parseInt(_0x32b293(0x1fb))/0x8+-parseInt(_0x32b293(0x1fa))/0x9;if(_0x399bf4===_0x12dea2)break;else _0x1228d5['push'](_0x1228d5['shift']());}catch(_0x51f1b3){_0x1228d5['push'](_0x1228d5['shift']());}}}(_0x2cd7,0xa7ac3));import _0x105f71 from'fs';let handler=async(_0x29768e,{text:_0x287cc4,usedPrefix:_0x992490,command:_0x3e3d56})=>{const _0x135e3b=_0x1c22;if(!_0x287cc4)throw _0x135e3b(0x1ff);if(!_0x29768e[_0x135e3b(0x1f5)][_0x135e3b(0x20a)])throw _0x135e3b(0x208);let _0x2c2d31='plugins/'+_0x287cc4+_0x135e3b(0x20d);await _0x105f71[_0x135e3b(0x202)](_0x2c2d31,_0x29768e[_0x135e3b(0x1f5)]['text']);let _0x526f0f={'key':{'participants':_0x135e3b(0x207),'fromMe':![],'id':'Halo'},'message':{'locationMessage':{'name':_0x135e3b(0x20b),'jpegThumbnail':await(await fetch(_0x135e3b(0x20f)))[_0x135e3b(0x1f8)](),'vcard':_0x135e3b(0x201)}},'participant':'0@s.whatsapp.net'};conn[_0x135e3b(0x1fc)](_0x29768e[_0x135e3b(0x1f4)],'_'+_0x2c2d31+'_',_0x526f0f);};function _0x1c22(_0x164f22,_0x82de16){const _0x2cd76b=_0x2cd7();return _0x1c22=function(_0x1c2274,_0x25bff1){_0x1c2274=_0x1c2274-0x1f3;let _0x1d88f6=_0x2cd76b[_0x1c2274];return _0x1d88f6;},_0x1c22(_0x164f22,_0x82de16);}handler[_0x40c8d9(0x1fe)]=[_0x40c8d9(0x1f3)][_0x40c8d9(0x1f6)](_0x3c6c62=>_0x3c6c62+_0x40c8d9(0x1fd)),handler[_0x40c8d9(0x205)]=[_0x40c8d9(0x209)],handler[_0x40c8d9(0x206)]=/^salva|salvaplugin$/i,handler[_0x40c8d9(0x1f9)]=!![];export default handler;
+import fs from 'fs'
+let handler = async (m, { text, usedPrefix, command }) => {
+    if (!text) throw `uhm.. che nome do al plugin?`
+    if (!m.quoted.text) throw `Rispondi al msg!`
+    let path = `plugins/${text}.js`
+    await fs.writeFileSync(path, m.quoted.text)
+  let prova = { "key": {"participants":"0@s.whatsapp.net", "fromMe": false, "id": "Halo"
+  }, "message": { 
+  "locationMessage": { name: '𝐏𝐥𝐮𝐠𝐢𝐧 𝐬𝐚𝐥𝐯𝐚𝐭𝐨 ✓',
+"jpegThumbnail": await(await fetch('https://telegra.ph/file/876cc3f192ec040e33aba.png')).buffer(),
+  "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+  }}, "participant": "0@s.whatsapp.net"}
+    conn.reply(m.chat, `${path}`, prova)}
+handler.help = ['saveplugin'].map(v => v + ' <nombre>')
+handler.tags = ['owner']
+handler.command = ["salvar", "saveplugin"]
+
+handler.rowner = true
+export default handler
+

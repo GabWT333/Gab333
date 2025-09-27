@@ -1,73 +1,46 @@
-import { performance } from 'perf_hooks';
 
-let handler = async (m, { conn, text }) => {
-    let start = `⏳ *Inizio processo di DOX...*`;
-    await m.reply(start);
-
-    // Progressione del "boost" con simulazione
-    await m.reply(`🔍 *Progresso:* ${pickRandom(['10', '20', '30', '40', '50'])}%`);
-    await m.reply(`🔍 *Progresso:* ${pickRandom(['60', '70', '80'])}%`);
-    await m.reply(`🔍 *Progresso:* ${pickRandom(['90', '100'])}%`);
-
-    // Simulazione di velocità
-    let old = performance.now();
-    let neww = performance.now();
-    let speed = `${(neww - old).toFixed(2)} ms`;
-
-    // Risultati finali
-    let doxeo = `
-*✔️DOX COMPLETATO CON SUCCESSO*
-━━━━━━━━━━━━━━━━━━━━━
-👤 *Persona doxata:* ${text}
-🌐 *Indirizzo IP:* ${pickRandom([
-        '92.28.211.234',
-        '140.216.58.100',
-        '80.139.134.15',
-        '88.53.127.8',
-        '231.87.85.223',
-    ])}
-🔐 *IPV6:* ${pickRandom([
-        '4e4d:1176:3285:02bb:40c7:bd44:4094:4f37',
-        '806a:9b5d:c5b3:e852:b490:0492:bef9:085b',
-    ])}
-📶 *ISP:* ${pickRandom([
-        'Telecom Italia',
-        'Vodafone',
-        'WINDTRE',
-        'Fastweb',
-        'Tiscali',
-    ])}
-📡 *DNS:* ${pickRandom(['8.8.8.8', '8.8.4.4', '1.1.1.1'])}
-🖥️ *MAC Address:* ${pickRandom([
-        '4A:93:23:18:BA:7F',
-        'F0:1A:30:3B:EA:D1',
-        'AD:7E:2A:FB:81:B3',
-    ])}
-📟 *Router Vendor:* ${pickRandom([
-        'ERICCSON',
-        'Alcatel',
-        'Asus',
-        'Cisco',
-        'Huawei',
-        'Samsung',
-        'IPhone',
-        'Motorola',
-        'Oppo',
-        'Redmi',
-    ])}
-━━━━━━━━━━━━━━━━━━━━━
-
-🕒 *Tempo di esecuzione:* ${speed}
-`.trim();
-
-    m.reply(doxeo, null, { mentions: conn.parseMention(doxeo) });
+import {performance} from 'perf_hooks';
+const handler = async (m, {conn, text}) => {
+const start = performance.now();    
+const end = performance.now();
+const executionTime = (end - start);
+async function loading() {
+var hawemod = [
+    "Iniettando Malware",
+    " █ 10%",
+    " █ █ 20%",
+    " █ █ █ 30%",
+    " █ █ █ █ 40%",
+    " █ █ █ █ █ 50%",
+    " █ █ █ █ █ █ 60%",
+    " █ █ █ █ █ █ █ 70%",
+    " █ █ █ █ █ █ █ █ 80%",
+    " █ █ █ █ █ █ █ █ █ 90%",
+    " █ █ █ █ █ █ █ █ █ █ 100%",
+    "Violazione del sistema in corso.. \n Connessione al server errore 404 ",
+    "Dispositivo connesso con successo... \n Ricezione dati...",
+    "Dati sottratti dal dispositivo 100% completato \n Eliminazione di tutte le prove ed eliminazione di tutti i malware...",
+    " HACKING COMPLETATO ",
+    " INVIO DEI LOG...",
+    " DATI INVIATI CON SUCCESSO E Connessione disconnessa",
+    "REGISTRI PULITI"
+  ];
+      let { key } = await conn.sendMessage(m.chat, {text: `*☠ ¡¡Avvio del doxxing!! ☠*`}, {quoted: m})
+ for (let i = 0; i < hawemod.length; i++) {
+   await new Promise(resolve => setTimeout(resolve, 1000)); 
+   await conn.sendMessage(m.chat, {text: hawemod[i], edit: key}, {quoted: m}); 
+  }     
+ }
+loading()    
 };
+handler.help = ['doxxing <nome> | <@tag>'];
+handler.tags = ['divertimento'];
+handler.command = ['dox']
+handler.group = true
 
-handler.help = ['doxear <nome> | <@tag>'];
-handler.tags = ['fun'];
-handler.command = /^dox$/i;
+
 export default handler;
 
-function pickRandom(list) {
-    return list[Math.floor(Math.random() * list.length)];
+function getRandomValue(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
 }

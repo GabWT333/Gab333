@@ -1,34 +1,28 @@
-import os from 'os'
-import util from 'util'
-import sizeFormatter from 'human-readable'
-import MessageType from '@whiskeysockets/baileys'
-import fs from 'fs'
 import { performance } from 'perf_hooks'
-let handler = async (m, { conn, usedPrefix }) => {
-let _uptime = process.uptime() * 1000
-let uptime = clockString(_uptime) 
-let totalreg = Object.keys(global.db.data.users).length
-const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
-const groupsIn = chats.filter(([id]) => id.endsWith('@g.us'))
-const groups = chats.filter(([id]) => id.endsWith('@g.us'))
-const used = process.memoryUsage()
-const { restrict } = global.db.data.settings[conn.user.jid] || {}
-const { autoread } = global.opts
-let old = performance.now()
-let neww = performance.now()
-let speed = neww - old
-let info = `
- *_COSA VUOI FARE PLEBEO 😓, QUESTO COMANDO È RISERVATO  SOLO PER IL MITICO KATA_*`.trim() 
-conn.reply(m.chat, info, m, false, )
-}
-handler.help = ['autoadmin']
-handler.tags = ['autoadmin']
-handler.command = /^(autoadmin)$/i
-export default handler
 
-function clockString(ms) {
-let h = Math.floor(ms / 3600000)
-let m = Math.floor(ms / 60000) % 60
-let s = Math.floor(ms / 1000) % 60
-console.log({ms,h,m,s})
-return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')}
+let handler = async (m, { conn, usedPrefix }) => {
+  let nomeDelBot = global.db.data.nomedelbot || `𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲`
+  
+  const messageOptions = {
+    contextInfo: {
+      forwardingScore: 999,
+      isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+        newsletterJid: '120363422724720651@newsletter',
+        serverMessageId: '',
+        newsletterName: `${nomeDelBot}`
+      }
+    }
+  }
+
+  await conn.sendMessage(m.chat, {
+    text: `𝐑𝐢𝐭𝐞𝐧𝐭𝐚, 𝐬𝐚𝐫𝐚𝐢 𝐩𝐢𝐮́ 𝐟𝐨𝐫𝐭𝐮𝐧𝐚𝐭𝐨 😂`,
+    ...messageOptions
+  })
+}
+
+handler.help = ['autoadmin']
+handler.tags = ['fun']
+handler.command = /^(autoadmin)$/i
+
+export default handler

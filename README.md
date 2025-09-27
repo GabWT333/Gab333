@@ -1,165 +1,128 @@
-<div align="center">
+<p align="center">
+  <img src="https://i.ibb.co/PsmK9LGR/9ddcde5b-b8e5-4fd6-bb74-94a0eeab826c.jpg" width="400">
+</p>
 
+<h1 align="center">© ChatUnity-Bot 7.2 🤖</h1>
+<p align="center"><strong>Un bot avanzato per WhatsApp, ricco di funzionalità e divertimento!</strong></p>
 
-[![Donazioni PayPal](https://img.shields.io/badge/PayPal-Dona-blue?style=for-the-badge&logo=paypal)](https://www.paypal.me/Gabgithub)
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram)](https://www.instagram.com/insta_gqbri)
-[![WhatsApp Channel](https://img.shields.io/badge/WhatsApp-Canale%20Ufficiale-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
-
-</div>
-
----
-
-## 📊 **Statistiche Repository OFF**
-
-<div align="center">
-
-![Followers](https://img.shields.io/github/followers/GabWT333?color=red&style=for-the-badge&logo=github)
-![Stars](https://img.shields.io/github/stars/GabWT333/Gab333?color=yellow&style=for-the-badge&logo=github)
-![Forks](https://img.shields.io/github/forks/GabWT333/Gab333?color=green&style=for-the-badge&logo=github)
-![Watchers](https://img.shields.io/github/watchers/GabWT333/Gab333?color=blue&style=for-the-badge&logo=github)
-
-![Profile Views](https://komarev.com/ghpvc/?username=GabWT333&color=blueviolet&style=for-the-badge&label=Profile+Views)
-![Repo Size](https://img.shields.io/github/repo-size/GabWT333/Gab333?color=orange&style=for-the-badge&logo=github)
-![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=for-the-badge)
-
-</div>
+<p align="center">
+  <a href="https://whatsapp.com/channel/0029VaZVlJZHwXb8naJBQN0J">
+    <img src="https://img.shields.io/badge/Canale_Ufficiale-black?style=for-the-badge&logo=whatsapp" alt="Canale Ufficiale">
+  </a>
+</p>
 
 ---
 
-## 🚀 **Installazione Rapida**
+## 📌 Introduzione
 
-### 📱 **Prerequisiti**
-
-Prima di iniziare, assicurati di avere:
-
-1. **MT Manager** (per modificare il bot)
-   - 📥 [Scarica MT Manager](https://mt-manager.en.softonic.com/android)
-
-2. **Termux** (versione specifica richiesta)
-   - 📥 [Scarica Termux v0.119.1](https://www.mediafire.com/file/0npdmv51pnttps0/com.termux_0.119.1-119_minAPI21(arm64-v8a,armeabi-v7a,x86,x86_64)(nodpi)_apkmirror.com.apk/file)
+© ChatUnity-Bot è un bot multifunzionale per WhatsApp, progettato per semplificare la gestione delle chat e offrire funzionalità avanzate. Con un'interfaccia intuitiva e una configurazione semplice, è perfetto per chiunque voglia migliorare l'esperienza su WhatsApp.
 
 ---
 
-## ⚙️ **Configurazione**
+## 📥 Installa Termux & MT Manager
 
-### 🔧 **Passo 1: Fork del Repository**
+<details>
+  <summary><b>Clicca qui per vedere i passaggi</b></summary>
 
-<div align="center">
+👉🏻 [Scarica Termux (MediaFire)](https://www.mediafire.com/file/0npdmv51pnttps0/com.termux_0.119.1-119_minAPI21(arm64-v8a,armeabi-v7a,x86,x86_64)(nodpi)_apkmirror.com.apk/)
 
-[![Fork Repository](https://img.shields.io/badge/🍴%20Fork-Repository-brightgreen?style=for-the-badge)](https://github.com/GabWT333/Gab333/fork)
+👉🏻 [Scarica MT Manager](https://mt-manager.en.softonic.com/android)
 
-</div>
-
-1. Clicca sul pulsante "Fork" sopra
-2. Modifica il numero del proprietario in [`config.js`](https://github.com/GabWT333/Gab333/blob/master/config.js)
+</details>
 
 ---
 
-## 🛠️ **Installazione Completa**
+## 🚀 Installazione (Termux)
 
-### 📋 **Comandi di Installazione**
-
-Copia e incolla questi comandi in Termux uno alla volta:
+[![Tutorial Installazione](https://img.shields.io/badge/Tutorial-Installazione-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/shorts/qek7wWadhtI?feature=share)
 
 ```bash
-# Configurazione iniziale
 termux-setup-storage
-pkg upgrade -y && pkg update -y
-
-# Installazione dipendenze
-pkg install git -y
-pkg install ffmpeg -y
-pkg install imagemagick -y
-yarn install -y 
-
-# Clonazione repository
-cd /sdcard && rm -rf Gab333 && git clone https://github.com/GabWT333/Gab333.git
-
-# Installazione bot
-cd /sdcard/Gab333
-yarn start
+apt update -y && yes | apt upgrade && pkg install -y bash wget mpv
+cd /sdcard
+wget -O - https://raw.githubusercontent.com/chatunitycenter/chatunity-bot/main/chatunity.sh | bash
 ```
 
 ---
 
-## 🎯 **Comandi Utili**
+## 🔄 Riavvia il bot (Termux)
 
-### 🟢 **Avviare 333BOT**
+<details>
+<summary><b>Clicca qui per vedere i passaggi</b></summary>
+
 ```bash
-cd /sdcard/Gab333
-yarn start
+cd chatunity-bot
+rm -rf Sessioni
+npm start
 ```
 
-### 🔄 **Ottenere un nuovo codice QR**
-```bash
-cd /sdcard/Gab333
-rm -rf 333BotSession
-yarn start
-```
-
-### ⚡ **Installazione Rapida (One-Line)**
-```bash
-cd /sdcard && rm -rf Gab333 && git clone https://github.com/GabWT333/Gab333.git && cd Gab333
-```
+</details>
 
 ---
 
-## 📞 **Contatti e Supporto**
+## 🕒 Attivo 24/7 con PM2 (Termux)
 
-<div align="center">
+<details>
+<summary><b>Clicca qui per vedere i passaggi</b></summary>
 
-| Piattaforma | Link |
-|-------------|------|
-| 📢 **Canale WhatsApp** | [Clicca qui](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h) |
-| 💬 **Gruppo WhatsApp** | [Clicca qui](https://chat.whatsapp.com/C7pf3YHGcYf8YoS1g3X1Wd) |
-| 📱 **Contatto Diretto** | [+39 350 936 8693](https://wa.me/+393509368693) |
-| 📷 **Instagram** | [@insta_gqbri](https://www.instagram.com/insta_gqbri) |
-| 💰 **Donazioni** | [PayPal](https://www.paypal.me/Gabgithub) |
+```bash
+npm i -g pm2
+pm2 start index.js
+pm2 save
+pm2 logs
+```
 
-</div>
+</details>
 
 ---
 
-## 👥 **Collaboratori**
+## 🌐 Installazione su Windows/VPS/RDP
+
+<details>
+<summary><b>Clicca qui per vedere i passaggi</b></summary>
+
+1. Scarica:
+   - [Git](https://git-scm.com/downloads)
+   - [NodeJS](https://nodejs.org/en/download)
+   - [FFmpeg](https://ffmpeg.org/download.html)
+   - [ImageMagick](https://imagemagick.org/script/download.php)
+
+2. Clona e installa:
+   ```bash
+   git clone https://github.com/chatunitycenter/chatunity-bot
+   cd chatunity-bot
+   npm install
+   npm update
+   npm start
+   ```
+
+</details>
+
+---
+
+## 📂 Risorse Utili
+
+- **Dashboard GitHub**: [Visita qui](https://github.com/chatunity-bot)
+- **Canale WhatsApp**: [Unisciti qui](https://whatsapp.com/channel/0029VaZVlJZHwXb8naJBQN0J)
+- **Contatto**: [Scrivi qui](https://wa.me/393773842461)
+- **Collaborazioni**: [Partecipa qui](https://whatsapp.com/channel/0029Vb1C4od5vKA35u1Mqc06)
+
+---
+
+## 👥 Collaboratori
 
 Grazie a tutti coloro che hanno contribuito a questo progetto!
 
-<div align="center">
-
-<a href="https://github.com/GabWT333/Gab333/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=GabWT333/Gab333" />
-</a>
-
-</div>
+<p align="center">
+  <a href="https://github.com/laboratiork25/beta/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=laboratiork25/beta"/>
+  </a>
+</p>
 
 ---
 
-## 🌐 **Roadmap Future**
+## 📜 Licenza
 
-<div align="center">
+© ChatUnity-Bot. Tutti i diritti riservati. Consulta la licenza per i dettagli.
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=0099FF&center=true&vCenter=true&width=500&lines=333Bot+presto+in+altre+lingue+🇮🇹;Nuove+funzionalità+in+arrivo+⚡;Supporto+multilingue+🌍;Aggiornamenti+costanti+🔄)
-
-</div>
-
----
-
-## 📄 **Licenza**
-
-Questo progetto è rilasciato sotto licenza MIT. Vedi il file [LICENSE](LICENSE) per maggiori dettagli.
-
----
-
-## ⭐ **Supporta il Progetto**
-
-Se questo bot ti è stato utile, considera di:
-- ⭐ Mettere una stella al repository
-- 🍴 Fare un fork del progetto
-- 💰 Fare una donazione tramite PayPal
-- 📢 Condividere il progetto con i tuoi amici
-
-<div align="center">
-
-**Realizzato con ❤️ da [GabWT333](https://github.com/GabWT333)**
-
-</div>
+<p align="center"><strong>🌟 Supporta il progetto con una stella su GitHub! 🌟</strong></p>

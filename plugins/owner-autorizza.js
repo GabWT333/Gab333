@@ -1,1 +1,0 @@
-Ecco il plugin: owner-autorizza.js

@@ -1,71 +1,97 @@
-import 'os';
-import 'util';
-import 'human-readable';
-import '@whiskeysockets/baileys';
-import 'fs';
-import 'perf_hooks';
+import { performance } from 'perf_hooks';
+import fetch from 'node-fetch';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
+import '../lib/language.js';
 
-let handler = async (message, { conn, usedPrefix }) => {
-  const senderName = await conn.getName(message.sender);
-  const targetJid = message.quoted
-    ? message.quoted.sender
-    : message.mentionedJid && message.mentionedJid[0]
-    ? message.mentionedJid[0]
-    : message.fromMe
-    ? conn.user.jid
-    : message.sender;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-  const botName = global.db.data.nomedelbot || "꙰ 𝟥𝟥𝟥 ꙰ 𝔹𝕆𝕋 ꙰";
+const handler = async (message, { conn, usedPrefix, command }) => {
+    const userId = message.sender
+    const groupId = message.isGroup ? message.chat : null
+    
+    const userCount = Object.keys(global.db.data.users).length;
+    const botName = global.db.data.nomedelbot || 'ChatUnity';
 
-  // Formattazione speciale dei comandi
-  const commandList = `
-╭━━━〔 *⚡ 𝑴𝑬𝑵𝑼 𝑫𝑬𝑳 𝑩𝑶𝑻 ⚡* 〕━━━╮
-┃  
-┃ 🛠 *𝑪𝑶𝑴𝑨𝑵𝑫𝑰 𝑮𝑬𝑵𝑬𝑹𝑨𝑳𝑰* 🛠
-┃ ━━━━━━━━━━━
-┃ ✦ ${usedPrefix}𝑷𝑹𝑶𝑷𝑹𝑰𝑬𝑻𝑨𝑹𝑰𝑶
-┃ ✦ ${usedPrefix}𝑭𝑼𝑵𝒁𝑰𝑶𝑵𝑰
-┃ ✦ ${usedPrefix}𝑨𝑫𝑴𝑰𝑵
-┃ ✦ ${usedPrefix}𝑮𝑹𝑼𝑷𝑷𝑶
-┃ ✦ ${usedPrefix}𝑶𝑾𝑵𝑬𝑹
-┃ ✦ ${usedPrefix}𝑪𝑹𝑬𝑫𝑰𝑻𝑰
-┃ ✦ ${usedPrefix}𝑺𝑼𝑷𝑷𝑶𝑹𝑻𝑶
-┃ ✦ ${usedPrefix}𝑩𝑶𝑻
-┃  
-╰━━━━━━━━━━━━━━━━━━╯
-🚀 𝑩𝒐𝒕: ${botName}
-🌟 *𝑽𝑬𝑹𝑺𝑰𝑶𝑵𝑬:* ${vs}
-`.trim();
+    const menuText = generateMenuText(usedPrefix, botName, userCount, userId, groupId);
 
-  // Invio del menu senza immagine
-  await conn.sendMessage(message.chat, {
-    text: commandList,
-    contextInfo: {
-      mentionedJid: conn.parseMention(wm),
-      forwardingScore: 1,
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363341274693350@newsletter',
-        serverMessageId: '',
-        newsletterName: botName
-      }
-    }
-  });
+    const imagePath = path.join(__dirname, '../menu/principale.jpeg'); 
+    
+    const footerText = global.t('menuFooter', userId, groupId) || 'Scegli un menu:'
+    const adminMenuText = global.t('menuAdmin', userId, groupId) || '🛡️ Menu Admin'
+    const ownerMenuText = global.t('menuOwner', userId, groupId) || '👑 Menu Owner'
+    const securityMenuText = global.t('menuSecurity', userId, groupId) || '🚨 Menu Sicurezza'
+    const groupMenuText = global.t('menuGroup', userId, groupId) || '👥 Menu Gruppo'
+    const aiMenuText = global.t('menuAI', userId, groupId) || '🤖 Menu IA'
+    
+    await conn.sendMessage(
+        message.chat,
+        {
+            image: { url: imagePath },
+            caption: menuText,
+            footer: footerText,
+            buttons: [
+                { buttonId: `${usedPrefix}menuadmin`, buttonText: { displayText: adminMenuText }, type: 1 },
+                { buttonId: `${usedPrefix}menuowner`, buttonText: { displayText: ownerMenuText }, type: 1 },
+                { buttonId: `${usedPrefix}menusicurezza`, buttonText: { displayText: securityMenuText }, type: 1 },
+                { buttonId: `${usedPrefix}menugruppo`, buttonText: { displayText: groupMenuText }, type: 1 },
+                { buttonId: `${usedPrefix}menuia`, buttonText: { displayText: aiMenuText }, type: 1 }
+            ],
+            viewOnce: true,
+            headerType: 4
+        }
+    );
 };
 
-handler.help = ["menu"];
+handler.help = ['menu'];
 handler.tags = ['menu'];
 handler.command = /^(menu|comandi)$/i;
 
 export default handler;
 
-// Funzione per formattare il tempo (ma Youns è immortale 😂)
-function clockString(milliseconds) {
-  let hours = Math.floor(milliseconds / 3600000);
-  let minutes = Math.floor(milliseconds / 60000) % 60;
-  let seconds = Math.floor(milliseconds / 1000) % 60;
+function generateMenuText(prefix, botName, userCount, userId, groupId) {
+    const menuTitle = global.t('mainMenuTitle', userId, groupId) || '💬 𝑴𝑬𝑵𝑼 𝑫𝑬𝑳 𝑩𝑶𝑻 💬'
+    const staffText = global.t('staffCommand', userId, groupId) || 'staff'
+    const hegemoniaText = global.t('hegemoniaCommand', userId, groupId) || 'egemonia'
+    const candidatesText = global.t('candidatesCommand', userId, groupId) || 'candidati'
+    const installText = global.t('installCommand', userId, groupId) || 'installa'
+    const guideText = global.t('guideCommand', userId, groupId) || 'guida'
+    const channelsText = global.t('channelsCommand', userId, groupId) || 'canali'
+    const systemText = global.t('systemCommand', userId, groupId) || 'sistema'
+    const faqText = global.t('faqCommand', userId, groupId) || 'FAQ'
+    const pingText = global.t('pingCommand', userId, groupId) || 'ping'
+    const reportText = global.t('reportCommand', userId, groupId) || 'segnala'
+    const suggestText = global.t('suggestCommand', userId, groupId) || 'consiglia'
+    const newsText = global.t('newsCommand', userId, groupId) || 'novità'
+    const versionText = global.t('versionLabel', userId, groupId) || '𝑽𝑬𝑹𝑺𝑰𝑶𝑵𝑬'
+    const collabText = global.t('collabLabel', userId, groupId) || '𝐂𝐎𝐋𝐋𝐀𝐁: 𝐎𝐍𝐄 𝐏𝐈𝐄𝐂𝐄'
+    const usersText = global.t('usersLabel', userId, groupId) || '𝐔𝐓𝐄𝐍𝐓𝐈'
+    
+    return `
 
-  console.log({ ms: milliseconds, h: hours, m: minutes, s: seconds });
-
-  return [hours, minutes, seconds].map(timeUnit => timeUnit.toString().padStart(2, '0')).join(':');
+╭〔 *${menuTitle}* 〕┈⊷
+┃◈╭───────────·๏
+┃◈┃• 👑 *${prefix}${staffText}*
+┃◈┃• 👑 *${prefix}${hegemoniaText}*
+┃◈┃• 📜 *${prefix}${candidatesText}*
+┃◈┃• 📥 *${prefix}${installText}*
+┃◈┃• 📖 *${prefix}${guideText}*
+┃◈┃• 📝 *${prefix}${channelsText}* 
+┃◈┃• ⚙ *${prefix}${systemText}*
+┃◈┃• ❓ *${prefix}${faqText}*
+┃◈┃• 🚀 *${prefix}${pingText}*
+┃◈┃• 📝 *${prefix}${reportText}* 
+┃◈┃• 💡 *${prefix}${suggestText}* 
+┃◈┃• 🆕 *${prefix}${newsText}* (aggiornamenti)
+┃◈┃• 🆕 *${prefix}chatunity* (CHATBOT)
+┃◈┃• 🆕 *${prefix}gruppi* 
+┃◈┃
+┃◈└───────────┈⊷
+┃◈┃• *${versionText}:* 7.1
+┃◈┃• ${collabText}
+┃◈┃• ${usersText}: ${userCount}
+╰━━━━━━━━━━━━━┈·๏
+`.trim();
 }

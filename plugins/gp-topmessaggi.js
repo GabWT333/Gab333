@@ -1,1 +1,180 @@
-const _0x5afa9d=_0xf3af;function _0xf3af(_0x5ec653,_0x1abc10){const _0x2508ac=_0x2508();return _0xf3af=function(_0xf3af65,_0x51004c){_0xf3af65=_0xf3af65-0x11b;let _0x16e565=_0x2508ac[_0xf3af65];return _0x16e565;},_0xf3af(_0x5ec653,_0x1abc10);}(function(_0x2422c6,_0xefaaf0){const _0x4e3877=_0xf3af,_0x62509b=_0x2422c6();while(!![]){try{const _0x24ef12=parseInt(_0x4e3877(0x121))/0x1*(-parseInt(_0x4e3877(0x11d))/0x2)+parseInt(_0x4e3877(0x128))/0x3*(-parseInt(_0x4e3877(0x129))/0x4)+parseInt(_0x4e3877(0x12b))/0x5+-parseInt(_0x4e3877(0x141))/0x6+-parseInt(_0x4e3877(0x133))/0x7*(-parseInt(_0x4e3877(0x12c))/0x8)+-parseInt(_0x4e3877(0x123))/0x9*(parseInt(_0x4e3877(0x13c))/0xa)+parseInt(_0x4e3877(0x126))/0xb;if(_0x24ef12===_0xefaaf0)break;else _0x62509b['push'](_0x62509b['shift']());}catch(_0x4d328a){_0x62509b['push'](_0x62509b['shift']());}}}(_0x2508,0x7f32f));let handler=async(_0x17b471,{conn:_0x22473e,args:_0x32e2eb,participants:_0x1f8d90})=>{const _0x5381d5=_0xf3af;let _0xb56f5a=_0x1f8d90[_0x5381d5(0x13a)](_0x4ef481=>_0x4ef481['id']!==_0x22473e[_0x5381d5(0x139)][_0x5381d5(0x12a)])[_0x5381d5(0x131)](_0x5109a7=>{const _0xca7c=_0x5381d5,_0x2514d8=global['db'][_0xca7c(0x122)][_0xca7c(0x138)][_0x5109a7['id']];return{..._0x2514d8,'jid':_0x5109a7['id']};}),_0x3ae2e6=_0xb56f5a[_0x5381d5(0x131)](toNumber(_0x5381d5(0x11c)))[_0x5381d5(0x134)](sort('messaggi')),_0x48cb23=_0x3ae2e6[_0x5381d5(0x131)](enumGetKey),_0x2a5a6b=_0x32e2eb[0x0]&&_0x32e2eb[0x0][_0x5381d5(0x12f)]>0x0?Math[_0x5381d5(0x12e)](0x64,Math[_0x5381d5(0x136)](parseInt(_0x32e2eb[0x0]),0xa)):0xa;if(_0x2a5a6b>0x64){_0x22473e[_0x5381d5(0x120)](_0x17b471[_0x5381d5(0x135)],'⚠️\x20𝐋𝐚\x20𝐜𝐥𝐚𝐬𝐬𝐢𝐟𝐢𝐜𝐚\x20𝐩𝐮𝐨\x27\x20𝐦𝐨𝐬𝐭𝐫𝐚𝐫𝐞\x20𝐚𝐥\x20𝐦𝐚𝐬𝐬𝐢𝐦𝐨\x20𝐢\x20𝐩𝐫𝐢𝐦𝐢\x20𝟏𝟎𝟎\x20𝐮𝐭𝐞𝐧𝐭𝐢.',_0x17b471);return;}let _0x23db4b=_0x48cb23['indexOf'](_0x17b471[_0x5381d5(0x140)])+0x1,_0xa45062=_0xb56f5a[_0x5381d5(0x12f)],_0x51c5d1=_0x5381d5(0x127)+_0x2a5a6b+_0x5381d5(0x13e)+_0x3ae2e6[_0x5381d5(0x11b)](0x0,_0x2a5a6b)['map'](({jid:_0x521496,messaggi:_0x2d9267},_0x857f6e)=>getMedaglia(_0x857f6e+0x1)+'\x20«\x20*'+_0x2d9267+_0x5381d5(0x12d)+_0x521496[_0x5381d5(0x130)]`@`[0x0])[_0x5381d5(0x137)]('\x0a');_0x17b471['sender']!==_0x22473e[_0x5381d5(0x139)][_0x5381d5(0x12a)]&&(_0x51c5d1+=_0x5381d5(0x132)+_0x23db4b+'°*\x20𝐝𝐢\x20*'+_0xa45062+'*');let _0x35f75f={'key':{'participants':'0@s.whatsapp.net','fromMe':![],'id':_0x5381d5(0x13d)},'message':{'locationMessage':{'name':_0x5381d5(0x13f),'jpegThumbnail':await(await fetch(_0x5381d5(0x11f)))[_0x5381d5(0x11e)](),'vcard':_0x5381d5(0x124)}},'participant':'0@s.whatsapp.net'};_0x22473e['reply'](_0x17b471['chat'],_0x51c5d1[_0x5381d5(0x13b)](),_0x35f75f,{'mentions':[..._0x48cb23[_0x5381d5(0x11b)](0x0,_0x2a5a6b)]});};handler['command']=/^(top)$/i,handler[_0x5afa9d(0x125)]=!![];export default handler;function sort(_0x524180,_0x34d0b7=!![]){if(_0x524180)return(..._0x2f37e0)=>_0x2f37e0[_0x34d0b7&0x1][_0x524180]-_0x2f37e0[!_0x34d0b7&0x1][_0x524180];else return(..._0x53e537)=>_0x53e537[_0x34d0b7&0x1]-_0x53e537[!_0x34d0b7&0x1];}function toNumber(_0xa879e3,_0x5e9ff0=0x0){if(_0xa879e3)return(_0x335cc7,_0x527b3,_0x58675f)=>{return{..._0x58675f[_0x527b3],[_0xa879e3]:_0x335cc7[_0xa879e3]===undefined?_0x5e9ff0:_0x335cc7[_0xa879e3]};};else return _0x43539c=>_0x43539c===undefined?_0x5e9ff0:_0x43539c;}function enumGetKey(_0x24c526){const _0x4961fb=_0x5afa9d;return _0x24c526[_0x4961fb(0x12a)];}function _0x2508(){const _0x2841c8=['reply','157zwSlIE','data','27bXCrAj','BEGIN:VCARD\x0aVERSION:3.0\x0aN:;Unlimited;;;\x0aFN:Unlimited\x0aORG:Unlimited\x0aTITLE:\x0aitem1.TEL;waid=19709001746:+1\x20(970)\x20900-1746\x0aitem1.X-ABLabel:Unlimited\x0aX-WA-BIZ-DESCRIPTION:ofc\x0aX-WA-BIZ-NAME:Unlimited\x0aEND:VCARD','group','25518515NPYRhl','𝐓𝐨𝐩\x20*','12OqxGqA','984564MsBqtM','jid','2764410EHZEJy','283488aOrjGq','*\x20»\x20@','min','length','split','map','\x0a\x0a𝐋𝐚\x20𝐭𝐮𝐚\x20𝐩𝐨𝐬𝐢𝐳𝐢𝐨𝐧𝐞:\x20*','98QmJGah','sort','chat','max','join','users','user','filter','trim','3090830gvRdlV','Halo','*\x20𝐮𝐭𝐞𝐧𝐭𝐢\x20𝐜𝐨𝐧\x20𝐩𝐢𝐮̀\x20𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢\x0a\x0a','𝐂𝐥𝐚𝐬𝐬𝐢𝐟𝐢𝐜𝐚\x20𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢','sender','3729360tArfXQ','slice','messaggi','4006CvJycp','buffer','https://telegra.ph/file/b311b1ffefcc34f681e36.png'];_0x2508=function(){return _0x2841c8;};return _0x2508();}function getMedaglia(_0x7fec55){if(_0x7fec55===0x1)return'🥇';else{if(_0x7fec55===0x2)return'🥈';else{if(_0x7fec55===0x3)return'🥉';else return'🏅';}}}
+// Plugin Fatto da Gabs333 - Velocizzato 
+import fetch from 'node-fetch';
+import fs from 'fs';
+
+function getMedal(position) {
+    if (position === 1) return '🥇';
+    if (position === 2) return '🥈';
+    if (position === 3) return '🥉';
+    return '🏅';
+}
+
+function createSorter(property, ascending = true) {
+    if (property) {
+        return (a, b) => ascending ? a[property] - b[property] : b[property] - a[property];
+    }
+    return (a, b) => ascending ? a - b : b - a;
+}
+
+async function getUserRole(conn, chatId, userId) {
+    try {
+        const groupData = await conn.groupMetadata(chatId);
+        const participant = groupData.participants.find(p => p.id === userId);
+        
+        if (participant) {
+            if (participant.admin === 'admin' || participant.admin === 'superadmin') {
+                return 'Admin 👑';
+            }
+        }
+        
+        if (groupData.owner === userId) {
+            return 'Founder ⚜';
+        }
+        
+        return 'Membro 🤍';
+    } catch {
+        return 'Membro 🤍';
+    }
+}
+
+function getUserLevel(messageCount) {
+    const levels = [
+        'Principiante I 😐',
+        'Principiante II 😐', 
+        'Recluta I 🙂',
+        'Recluta II 🙂',
+        'Avanzato I 🫡',
+        'Avanzato II 🫡',
+        'Pro I 😤',
+        'Pro II 😤',
+        'Bomber I 😎',
+        'Bomber II 😎',
+        'Master I 💪🏼',
+        'Master II 💪🏼',
+        'Élite I 🤩',
+        'Élite II 🤩',
+        'Mitico I 🔥',
+        'Mitico II 🔥',
+        'Campione I 🏆',
+        'Campione II 🏆',
+        'Eroe I 🎖',
+        'Eroe II 🎖',
+        'Leggenda I ⭐',
+        'Leggenda II ⭐',
+        'Dominatore I 🥶',
+        'Dominatore II 🥶',
+        'Stellare I 💫',
+        'Stellare II 💫',
+        'Cosmico I 🔮',
+        'Cosmico II 🔮',
+        'Titano I 😈',
+        'Titano II 😈',
+        'Fuori classe ❤‍🔥'
+    ];
+    
+    const levelIndex = Math.floor(messageCount / 500);
+    return levelIndex >= levels.length ? 'Fuori classe ❤‍🔥' : levels[levelIndex] || 'Principiante I 😐';
+}
+
+const handler = async (message, { conn, args, participants }) => {
+    const requiredFiles = [
+        './plugins/OWNER_file.js',
+        './termini.jpeg', 
+        './CODE_OF_CONDUCT.md',
+        './bal.png'
+    ];
+    
+    const missingFile = requiredFiles.find(file => !fs.existsSync(file));
+    if (missingFile) {
+        return await conn.sendMessage(message.chat, { 
+            text: '❗ Per usare questo comando usa la base di chatunity' 
+        }, { quoted: message });
+    }
+
+    if (!message.isGroup) {
+        return await message.reply('Questo comando funziona solo nei gruppi!');
+    }
+
+    let userCount = 20;
+    if (args[0]) {
+        const parsedCount = parseInt(args[0]);
+        if (!isNaN(parsedCount) && parsedCount >= 1 && parsedCount <= 100 && parsedCount % 5 === 0) {
+            userCount = parsedCount;
+        }
+    }
+
+    const userData = participants
+        .filter(participant => participant.id !== conn.user.jid)
+        .map(participant => {
+            const userDb = global.db.data.users[participant.id] || {};
+            return {
+                jid: participant.id,
+                messages: userDb.messaggi || 0,
+                userData: userDb
+            };
+        });
+
+    const sortedUsers = userData.sort(createSorter('messages', false));
+    const topUsers = sortedUsers.slice(0, userCount);
+
+    const userCards = await Promise.all(topUsers.map(async ({ jid, messages, userData }, index) => {
+        const medal = getMedal(index + 1);
+        
+        let displayName;
+        try {
+            displayName = await conn.getName(jid);
+        } catch {
+            displayName = jid.split('@')[0];
+        }
+
+        const userRole = await getUserRole(conn, message.chat, jid);
+
+        let profilePic;
+        try {
+            profilePic = await conn.profilePictureUrl(jid, 'image');
+        } catch {
+            profilePic = 'https://qu.ax/LoGxD.png';
+        }
+
+        const userLevel = getUserLevel(messages);
+
+        let genderEmoji = '🚻';
+        if (userData.genere === 'maschio') {
+            genderEmoji = '🚹';
+        } else if (userData.genere === 'femmina') {
+            genderEmoji = '🚺';
+        }
+
+        const instagramInfo = userData.instagram 
+            ? `🌐 instagram.com/${userData.instagram}` 
+            : '🌐 Instagram: non impostato';
+
+        const cardBody = [
+            `📝 Messaggi: ${messages}`,
+            `🟣 Ruolo: ${userRole}`,
+            `🏅 Livello: ${userLevel}`,
+            `🚻 Genere: ${genderEmoji}`,
+            instagramInfo
+        ].join('\n');
+
+        return {
+            image: { url: profilePic },
+            title: `#${index + 1} ${displayName}`,
+            body: cardBody,
+            footer: `Top messaggi ${userCount} utenti`
+        };
+    }));
+
+    await conn.sendMessage(message.chat, {
+        title: `🏆 Top ${userCount} utenti per messaggi`,
+        text: 'Guarda chi spacca di più nel gruppo! 🏅',
+        footer: 'Usa .info @menzione per più informazioni di su ciascun utente',
+        cards: userCards
+    }, { quoted: message });
+};
+
+handler.command = ['topmessaggi'];
+handler.group = true;
+handler.admin = false;
+
+export default handler;

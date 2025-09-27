@@ -1,25 +1,42 @@
 let handler = async (m, { conn, command, text }) => {
-    // Calcolo in base alla volontà di Youns
-    let width = Math.floor(Math.random() * 31);
+    // Genera un livello casuale di alcol nel sangue
+    let width = Math.floor(Math.random() * 101);
 
-    // Frase finale basata sulla misura
-    let finalPhrase = width >= 8 
-        ?"👮 *il ragazzo/a è astemio/a*"
-        : "😅 *il bro è calato in depressione*";
+    // Determina il messaggio in base al livello
+    let finalPhrase = width >= 70 
+        ? "🍾 Amico se hai bisogno di parlare io ci sono.." 
+        : width >= 30 
+        ? "🥂 Beve in modo responsabile, o quasi..." 
+        : "🚰 Totalmente sobrio, niente sbronze per oggi!";
 
-    // Messaggio 🥵
+    // Creazione del messaggio
     let message = `
-━━━━━━━━━━━━━━━━━━━━━━━
-*MOMENTO DEL TEST DELL'ALCOL!🍷* 
-━━━━━━━━━━━━━━━━━━━━━━━
- *${text} è alcolizzato del *${width}%🍷!* 
-━━━━━━━━━━━━━━━━━━━━━━━
+『💬』 ══ •⊰✰⊱• ══ 『💬』
+
+MOMENTO DEL TEST DELL'ALCOL! 🍷 
+━━━━━━━━━━━━━━
+ ${text ? text : 'Tu'} ha un tasso alcolemico del ${width}%! 🍷
+『💬』 ══ •⊰✰⊱• ══ 『💬』
+
 ${finalPhrase}
 `.trim();
 
-    m.reply(message, null, { mentions: conn.parseMention(message) });
+    const messageOptions = {
+        contextInfo: {
+            forwardingScore: 1,
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: '120363422724720651@newsletter',
+                serverMessageId: '',
+                newsletterName: `ChatUnity` // Utilizzo della variabile botName
+            },
+        }
+    };
+
+    // Invia il messaggio con le menzioni e le opzioni
+    m.reply(message, null, { mentions: conn.parseMention(message), ...messageOptions });
 };
 
-handler.command = /^(alcolizzato)$/i;
+handler.command = /^(alcolizzato|alcol)$/i;
 
 export default handler;

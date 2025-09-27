@@ -1,1 +1,51 @@
-const _0x199d36=_0xfc33;function _0xfc33(_0x22fde6,_0x32f2b6){const _0x4a48de=_0x4a48();return _0xfc33=function(_0xfc33af,_0x3e8e66){_0xfc33af=_0xfc33af-0x1dd;let _0x31a277=_0x4a48de[_0xfc33af];return _0x31a277;},_0xfc33(_0x22fde6,_0x32f2b6);}function _0x4a48(){const _0x28a8c2=['https://telegra.ph/file/ba01cc1e5bd64ca9d65ef.jpg','split','test','231747LNxhie','1634992TcUzps','length','𝐁𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐨𝐦𝐞𝐭𝐫𝐨','425AivESd','floor','2646520JqMDEA','33fQTPtE','all','BEGIN:VCARD\x0aVERSION:3.0\x0aN:;Unlimited;;;\x0aFN:Unlimited\x0aORG:Unlimited\x0aTITLE:\x0aitem1.TEL;waid=19709001746:+1\x20(970)\x20900-1746\x0aitem1.X-ABLabel:Unlimited\x0aX-WA-BIZ-DESCRIPTION:ofc\x0aX-WA-BIZ-NAME:Unlimited\x0aEND:VCARD','users','sendMessage','Halo','\x20𝐡𝐚\x20𝐭𝐢𝐫𝐚𝐭𝐨\x20','@s.whatsapp.net','data','1961307yPJgwX','chats','2076DJumvL','2444274SfKPtw','isGroup','0@s.whatsapp.net','2ZcTmKu','\x20𝐡𝐚\x20𝐭𝐢𝐫𝐚𝐭𝐨\x20𝐥𝐚\x20𝐬𝐮𝐚\x20𝐩𝐫𝐢𝐦𝐚\x20𝐛𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐚','sender','6522ytameJ','blasphemy','text','map','chat','buffer'];_0x4a48=function(){return _0x28a8c2;};return _0x4a48();}(function(_0x2fcdc8,_0x5e1e4e){const _0x1be58e=_0xfc33,_0x45f36d=_0x2fcdc8();while(!![]){try{const _0x34ccc4=-parseInt(_0x1be58e(0x1f6))/0x1*(-parseInt(_0x1be58e(0x1ea))/0x2)+-parseInt(_0x1be58e(0x1fd))/0x3*(-parseInt(_0x1be58e(0x1e6))/0x4)+-parseInt(_0x1be58e(0x1fa))/0x5*(parseInt(_0x1be58e(0x1ed))/0x6)+parseInt(_0x1be58e(0x1e7))/0x7+parseInt(_0x1be58e(0x1f7))/0x8+-parseInt(_0x1be58e(0x1e4))/0x9+-parseInt(_0x1be58e(0x1fc))/0xa;if(_0x34ccc4===_0x5e1e4e)break;else _0x45f36d['push'](_0x45f36d['shift']());}catch(_0x112378){_0x45f36d['push'](_0x45f36d['shift']());}}}(_0x4a48,0x34bea));let handler=_0x31f800=>_0x31f800;handler[_0x199d36(0x1fe)]=async function(_0x566b62){const _0x5d537d=_0x199d36;let _0xdeff7a=global['db']['data'][_0x5d537d(0x1e5)][_0x566b62[_0x5d537d(0x1f1)]];if(!_0x566b62[_0x5d537d(0x1e8)])return null;if(_0xdeff7a['bestemmiometro']&&/(?:porco dio|porcodio|dio bastardo|dio cane|porcamadonna|madonnaporca|porca madonna|madonna porca|dio cristo|diocristo|dio maiale|diomaiale|jesucristo|jesu cristo|cristo madonna|madonna impanata|dio cristo|cristo dio|dio frocio|dio gay|dio madonna|dio infuocato|dio crocifissato|madonna puttana|madonna vacca|madonna inculata|maremma maiala|padre pio|jesu impanato|jesu porco|porca madonna|diocane|madonna porca|dio capra|capra dio|padre pio ti spio)/i[_0x5d537d(0x1f5)](_0x566b62[_0x5d537d(0x1ef)])){const _0x3bc93a=global['db'][_0x5d537d(0x1e3)][_0x5d537d(0x1de)][_0x566b62['sender']];_0x3bc93a[_0x5d537d(0x1ee)]=(_0x3bc93a[_0x5d537d(0x1ee)]||0x0)+0x1;if(_0x3bc93a[_0x5d537d(0x1ee)]==0x1){const _0x432e50='@'+_0x566b62[_0x5d537d(0x1ec)][_0x5d537d(0x1f4)]`@`[0x0]+_0x5d537d(0x1eb);let _0x165236={'key':{'participants':_0x5d537d(0x1e9),'fromMe':![],'id':_0x5d537d(0x1e0)},'message':{'locationMessage':{'name':_0x5d537d(0x1f9),'jpegThumbnail':await(await fetch(_0x5d537d(0x1f3)))['buffer'](),'vcard':'BEGIN:VCARD\x0aVERSION:3.0\x0aN:;Unlimited;;;\x0aFN:Unlimited\x0aORG:Unlimited\x0aTITLE:\x0aitem1.TEL;waid=19709001746:+1\x20(970)\x20900-1746\x0aitem1.X-ABLabel:Unlimited\x0aX-WA-BIZ-DESCRIPTION:ofc\x0aX-WA-BIZ-NAME:Unlimited\x0aEND:VCARD'}},'participant':'0@s.whatsapp.net'};conn[_0x5d537d(0x1df)](_0x566b62[_0x5d537d(0x1f1)],{'text':_0x432e50,'mentions':[..._0x432e50['matchAll'](/@([0-9]{5,16}|0)/g)][_0x5d537d(0x1f0)](_0x60791d=>_0x60791d[0x1]+'@s.whatsapp.net')},{'quoted':_0x165236});}if(_0x3bc93a['blasphemy']>0x1){const _0x45e313='@'+_0x566b62[_0x5d537d(0x1ec)][_0x5d537d(0x1f4)]`@`[0x0]+_0x5d537d(0x1e1)+_0x3bc93a[_0x5d537d(0x1ee)]+'\x20𝐛𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐞';let _0x1e9c03={'key':{'participants':_0x5d537d(0x1e9),'fromMe':![],'id':'Halo'},'message':{'locationMessage':{'name':_0x5d537d(0x1f9),'jpegThumbnail':await(await fetch(_0x5d537d(0x1f3)))[_0x5d537d(0x1f2)](),'vcard':_0x5d537d(0x1dd)}},'participant':_0x5d537d(0x1e9)};conn[_0x5d537d(0x1df)](_0x566b62['chat'],{'text':_0x45e313,'mentions':[..._0x45e313['matchAll'](/@([0-9]{5,16}|0)/g)][_0x5d537d(0x1f0)](_0x2d99a6=>_0x2d99a6[0x1]+_0x5d537d(0x1e2))},{'quoted':_0x1e9c03});}}};export default handler;function pickRandom(_0x4ea783){const _0x3b0b9f=_0x199d36;return _0x4ea783[Math[_0x3b0b9f(0x1fb)](Math['random']()*_0x4ea783[_0x3b0b9f(0x1f8)])];}
+import fetch from 'node-fetch'
+
+// Handler principale
+let handler = m => m
+
+handler.before = async function (m) {
+    // Accedi ai dati utente e chat dal database globale
+    let chat = global.db.data.chats[m.chat]
+    let user = global.db.data.users[m.sender]
+
+    // Se non è un gruppo, esci
+    if (!m.isGroup) return null
+
+    // Se la funzione bestemmiometro non è attiva, esci
+    if (!chat.bestemmiometro) return
+
+    // Regex per rilevare bestemmie
+    const regex = /(?:porco dio|porcodio|dio bastardo|dio cane|porcamadonna|madonnaporca|porca madonna|madonna porca|dio cristo|diocristo|dio maiale|diomaiale|jesucristo|jesu cristo|cristo madonna|madonna impanata|dio cristo|cristo dio|dio frocio|dio gay|dio madonna|dio infuocato|dio crocifissato|madonna puttana|madonna vacca|madonna inculata|maremma maiala|padre pio|jesu impanato|jesu porco|porca madonna|diocane|madonna porca|dio capra|capra dio|padre pio ti spio)/i
+
+    // Se il messaggio contiene bestemmie
+    if (regex.test(m.text)) {
+        user.blasphemy = (user.blasphemy || 0) + 1
+        user.blasphemyCounted = Math.floor(user.blasphemy / 10)
+
+        // Notifica solo ogni 10 bestemmie
+        if (user.blasphemy % 10 === 0) {
+            const mention = '@' + m.sender.split('@')[0] + ` ha tirato ${user.blasphemy} bestemmie!`
+            let quoted = {
+                key: {
+                    participants: '0@s.whatsapp.net',
+                    fromMe: false,
+                    id: 'Halo'
+                },
+                message: {
+                    locationMessage: {
+                        name: '𝐁𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐨𝐦𝐞𝐭𝐫𝐨',
+                        jpegThumbnail: await (await fetch('https://telegra.ph/file/ba01cc1e5bd64ca9d65ef.jpg')).buffer(),
+                        vcard: 'BEGIN:VCARD\x0aVERSION:3.0\x0aN:;Unlimited;;;\x0aFN:Unlimited\x0aORG:Unlimited\x0aTITLE:\x0aitem1.TEL;waid=19709001746:+1\x20(970)\x20900-1746\x0aitem1.X-ABLabel:Unlimited\x0aX-WA-BIZ-DESCRIPTION:ofc\x0aX-WA-BIZ-NAME:Unlimited\x0aEND:VCARD'
+                    }
+                },
+                participant: '0@s.whatsapp.net'
+            }
+            await conn.sendMessage(m.chat, {
+                text: mention,
+                mentions: [...mention.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
+            }, { quoted })
+        }
+    }
+}
+
+export default handler

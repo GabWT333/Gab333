@@ -12,6 +12,6 @@ console.log(err);
 throw 'Nessun utente bloccato'})}
 handler.help = ['blocklist']
 handler.tags = ['main']
-handler.command = /^blocklist/i;
+handler.command = ['blocklist', 'listblock'] 
 handler.rowner = true
 export default handler

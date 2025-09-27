@@ -1,24 +1,33 @@
-import { sticker } from '../lib/sticker.js'
-import axios from 'axios'
+let handler = async(m, { conn, text, args, usedPrefix, command }) => {
+if (!text) throw `manca il testo`
+let teks = encodeURI(text)
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {  
-  if (!text) throw `⚠️ *Escriba un texto para convertirlo en sticker.*\n\n📌 *Ejemplo:* \n${usedPrefix + command} Nuevo Sticker`
+if (command == 'attp') {
+let teksb = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
+conn.sendFile(m.chat, global.API('xteam', '/attp', { file: '', text: teksb }), 'sticker.webp', '', m, false, { asSticker: true })}
 
-  let encodedText = encodeURIComponent(text)
+if (command == 'attp2') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+    
+if (command == 'attp3') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp2?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
 
-  if (command === 'attp') {  
-    let url = `https://api.xteam.xyz/attp?text=${encodedText}`  
-    let stiker = await sticker(null, url, global.packname, global.author)  
-    await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, { asSticker: true })  
-  }  
-
-  if (command === 'ttp') {  
-    let url = `https://api.xteam.xyz/ttp?text=${encodedText}`  
-    let stiker = await sticker(null, url, global.packname, global.author)  
-    await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, { asSticker: true })  
-  }  
+if (command == 'ttp5') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp6?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+    
+if (command == 'ttp4') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp5?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+    
+if (command == 'ttp3') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp3?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+    
+if (command == 'ttp2') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp2?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+    
+if (command == 'ttp') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+    
 }
-
-handler.command = handler.help = ['ttp', 'attp']
+handler.command = handler.help = ['ttp', 'ttp2', 'ttp3', 'ttp4', 'ttp5', 'attp', 'attp2', 'attp3']
 handler.tags = ['sticker']
 export default handler

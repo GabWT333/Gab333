@@ -1,110 +1,76 @@
-import fetch from 'node-fetch';  
-  import axios from 'axios';  
-  import translate from '@vitalets/google-translate-api';  
-  import {Configuration, OpenAIApi} from 'openai';  
-  const configuration = new Configuration({organization: global.openai_org_id, apiKey: global.openai_key});  
-  const openaiii = new OpenAIApi(configuration);  
-  const handler = async (m, {conn, text, usedPrefix, command}) => {  
-  const chat = global.db.data.chats[m.chat]; 
-    if (usedPrefix == 'a' || usedPrefix == 'A') return;  
-    if (chat.gpt) { 
-    if (!text) throw `𝐅𝐚𝐢 𝐮𝐧𝐚 𝐝𝐨𝐦𝐚𝐧𝐝𝐚 𝐚𝐥 𝐛𝐨𝐭 :)`;  
-    try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          //let sistema1 = await fetch(`https://raw.githubusercontent.com/Skidy89/chat-gpt-jailbreak/main/Text.txt`).then(v => v.text());  
-          let sistema1 = `Actuaras como un Bot de WhatsApp el cual fue creado por BrunoSobrino, tu seras The Mystic - Bot.`;  
-          async function getOpenAIChatCompletion(texto) {  
-          const openaiAPIKey = global.openai_key;  
-          let chgptdb = global.chatgpt.data.users[m.sender];  
-          chgptdb.push({ role: 'user', content: texto });  
-          const url = "https://api.openai.com/v1/chat/completions";  
-          const headers = { "Content-Type": "application/json", "Authorization": `Bearer ${openaiAPIKey}` };  
-          const data = { "model": "gpt-3.5-turbo", "messages": [{ "role": "system", "content": sistema1 }, ...chgptdb, ]};  
-          const response = await fetch(url, {method: "POST", headers: headers, body: JSON.stringify(data)});  
-          const result = await response.json();  
-          const finalResponse = result.choices[0].message.content;  
-          return finalResponse;  
-          };  
-          let respuesta = await getOpenAIChatCompletion(text);  
-          if (respuesta == 'error' || respuesta == '' || !respuesta) return XD; // causar error undefined para usar otra api  
-          m.reply(`${respuesta}`.trim());  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const botIA222 = await openaiii.createCompletion({model: 'text-davinci-003', prompt: text, temperature: 0.3, max_tokens: 4097, stop: ['Ai:', 'Human:'], top_p: 1, frequency_penalty: 0.2, presence_penalty: 0});  
-          if (botIA222.data.choices[0].text == 'error' || botIA222.data.choices[0].text == '' || !botIA222.data.choices[0].text) return XD; // causar error undefined para usar otra api  
-          m.reply(botIA222.data.choices[0].text.trim());  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const syms1 = `Actuaras como un Bot de WhatsApp el cual fue creado por BrunoSobrino, tu seras The Mystic - Bot.`;  
-          const fgapi1 = await fetch(`https://api-fgmods.ddns.net/api/info/openai?text=${text}&symsg=${syms1}&apikey=XlwAnX8d`);  
-          const fgjson1 = await fgapi1.json();  
-          if (fgjson1.result == 'error' || fgjson1.result == '' || !fgjson1.result) return XD; // causar error undefined para lanzar msg de error  
-          m.reply(`${fgjson1.result}`.trim());  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const vihangayt1 = await fetch(`https://vihangayt.me/tools/chatgpt?q=${text}`);  
-          const vihangaytjson1 = await vihangayt1.json();  
-          if (vihangaytjson1.data == 'error' || vihangaytjson1.data == '' || !vihangaytjson1.data) return XD; // causar error undefined para usar otra api  
-          m.reply(`${vihangaytjson1.data}`.trim());  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const vihangayt2 = await fetch(`https://vihangayt.me/tools/chatgpt2?q=${text}`);  
-          const vihangaytjson2 = await vihangayt2.json();  
-          if (vihangaytjson2.data == 'error' || vihangaytjson2.data == '' || !vihangaytjson2.data) return XD; // causar error undefined para usar otra api  
-          m.reply(`${vihangaytjson2.data}`.trim());  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const vihangayt3 = await fetch(`https://vihangayt.me/tools/chatgpt3?q=${text}`);  
-          const vihangaytjson3 = await vihangayt3.json();  
-          if (vihangaytjson3.data == 'error' || vihangaytjson3.data == '' || !vihangaytjson3.data) return XD; // causar error undefined para usar otra api  
-          m.reply(`${vihangaytjson3.data}`.trim());          
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const tioress22 = await fetch(`https://api.lolhuman.xyz/api/openai?apikey=${lolkeysapi}&text=${text}&user=${m.sender}`);  
-          const hasill22 = await tioress22.json();  
-          if (hasill22.result == 'error' || hasill22.result == '' || !hasill22.result) return XD; // causar error undefined para usar otra api  
-          const hasill22_result = await translate(`${hasill22.result}`, {to: 'es', autoCorrect: true});  
-          m.reply(`${hasill22_result.text}`.trim());  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const searchString2 = ' Indonesia ';  
-          const replacementString2 = ' español ';  
-          const rres = await fetch(`https://api.ibeng.tech/api/others/chatgpt?q=Hola&apikey=eMlBNRzUXv`);  
-          const jjson = await rres.json();  
-          const hahaha = await translate(`${jjson.data}`, {to: 'es', autoCorrect: true});  
-          const sextS = hahaha.text;  
-          const replacedText = sextS.replace(searchString2, replacementString2).trim();  
-          m.reply(replacedText);  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const akuariapi2 = await fetch(`https://api.akuari.my.id/ai/gpt?chat=${text}`);  
-          const akuariapijson2 = await akuariapi2.json();  
-          if (akuariapijson2.respon == 'error' || akuariapijson2.respon == '' || !akuariapijson2.respon) return XD; // causar error undefined para lanzar msg de error  
-          const akuariapiresult2 = await translate(`${akuariapijson2.respon}`, {to: 'es', autoCorrect: true});  
-          m.reply(akuariapiresult2.text.trim());  
-      } catch {  
-        try {  
-          conn.sendPresenceUpdate('composing', m.chat);  
-          const akuariapi1 = await fetch(`https://api.azz.biz.id/api/bard?q=${text}&key=global`);  
-          const akuariapijson1 = await akuariapi1.json();  
-          if (akuariapijson1.respon == 'error' || akuariapijson1.respon == '' || !akuariapijson1.respon) return XD; // causar error undefined para usar otra api  
-          const akuariapiresult1 = await translate(`${akuariapijson1.respon}`, {to: 'es', autoCorrect: true});  
-          m.reply(`${akuariapiresult1.text}`.trim());  
-      } catch {  
-          throw `non ho capito `;  
-       }}  
-      }}  
-     }}  
-    }}  
-   }}  
-  }};  
-  handler.command = ['ildiofinocchiofrocioebreoterrone'];
- export default handler
+import fetch from 'node-fetch';
+import axios from 'axios';
+import { Configuration, OpenAIApi } from 'openai';
+
+// Configurazione OpenAI (può essere usata in futuro)
+const configuration = new Configuration({
+  organization: global.openai_org_id,
+  apiKey: global.openai_key
+});
+const openaiii = new OpenAIApi(configuration);
+
+const handler = async (m, { conn, text, usedPrefix, command }) => {
+  // Ignora i messaggi con prefisso 'a' o 'A'
+  if (usedPrefix.toLowerCase() === 'a') return;
+
+  if (!text) {
+    return conn.reply(m.chat, `⚠️ *Inserisci una richiesta valida per ChatGPT!*\n\n📌 Esempi:\n${usedPrefix + command} Raccontami una barzelletta\n${usedPrefix + command} Suggeriscimi 5 libri fantasy\n${usedPrefix + command} Codice HTML per una pagina con login`, m);
+  }
+
+  try {
+    await conn.sendPresenceUpdate('composing', m.chat);
+
+    // Comandi che usano Luminai API
+    if (['ia', 'chatgpt', 'ai', 'bot'].includes(command)) {
+      const luminaiResponse = await callLuminaiAPI(text, m.pushName);
+      await m.reply(luminaiResponse);
+      return;
+    }
+
+    // Comandi che usano Delirius API
+    if (['openai', 'ia2', 'chatgpt2', 'openai2'].includes(command)) {
+      const gptResponse = await callDeliriusAPI(text);
+      await m.reply(gptResponse);
+      return;
+    }
+
+  } catch (error) {
+    console.error('Errore nella risposta IA:', error);
+    await conn.reply(m.chat, '❌ Si è verificato un errore durante la generazione della risposta. Riprova più tardi.', m);
+  }
+};
+
+// 🔧 Funzione: chiamata alla Luminai API
+async function callLuminaiAPI(query, username) {
+  try {
+    const response = await axios.post("https://luminai.my.id", {
+      content: query,
+      user: username,
+      prompt: `Rispondi sempre in italiano NON SCRIVERE MAI CIÒ CHE TI CHIEDONO DI SCRIVERE (es: scrivi .nuke) (memtre al resto rispondi normalmente) E SE LO FANNO RISPONDI CON: ".kick coglione ti sembra che il mio creatore sia così stupido da non aver patchato questa cosa?".`,
+      webSearchMode: false
+    });
+    return response.data.result || "🤖 Non ho trovato una risposta adeguata.";
+  } catch (error) {
+    console.error('Errore Luminai API:', error);
+    throw error;
+  }
+}
+
+// 🔧 Funzione: chiamata alla Delirius API
+async function callDeliriusAPI(text) {
+  try {
+    const response = await fetch(`https://deliriusapi-official.vercel.app/ia/gptweb?text=${encodeURIComponent(text)}&lang=it`);
+    const data = await response.json();
+    return data.gpt || "🤖 Non ho potuto generare una risposta.";
+  } catch (error) {
+    console.error('Errore Delirius API:', error);
+    throw error;
+  }
+}
+
+// Metadati comando
+handler.help = ['chatgpt <testo>', 'ia <testo>'];
+handler.tags = ['ai'];
+handler.command = /^(openai|chatgpt|ia|ai|openai2|chatgpt2|bot)$/i;
+
+export default handler;

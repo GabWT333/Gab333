@@ -1,17 +1,22 @@
 let handler = async (m) => {
-    const allowedNumber = '46737807114@s.whatsapp.net'; // Sostituisci con il numero autorizzato
-
-    if (m.sender !== allowedNumber) {
-        await m.reply('Non hai il permesso di usare questo comando!');
-        return;
-    }
-
-    global.db.data.chats[m.chat].isBanned = true;
-    m.reply('il bot si è addormentato 💤');
+  global.db.data.chats[m.chat].isBanned = false;
+  let message = '𝐜𝐡𝐚𝐭 𝐬𝐛𝐥𝐨𝐜𝐜𝐚𝐭𝐚 𝐜𝐨𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐨 ✓';
+  await conn.sendMessage(m.chat, { 
+      text: message,
+      contextInfo: {
+          forwardingScore: 99,
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+              newsletterJid: '120363422724720651@newsletter',
+              serverMessageId: '',
+              newsletterName: 'ChatUnity'
+          }
+      }
+  }, { quoted: m });
 };
 
-handler.help = ['banchat'];
+handler.help = ['unbanchat'];
 handler.tags = ['owner'];
-handler.command = /^banchat|off$/i;
+handler.command = /^unbanchat|unbangp$/i;
 handler.rowner = true;
 export default handler;

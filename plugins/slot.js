@@ -1,52 +1,88 @@
-let handler = async (m, { conn, args, command, usedPrefix }) => {
-    if (command == 'slot') {
-        let users = global.db.data.users[m.sender]; // Otteniamo i dati dell'utente
-        let scommessa = parseInt(args[0]); // Convertiamo l'argomento in un numero intero
+let cooldowns = {}
 
-        // Controllo input
-        if (!args[0]) 
-            throw `══════ •⊰✦⊱• ══════\n𝐐𝐮𝐚𝐧𝐭𝐢 𝐬𝐨𝐥𝐝𝐢 𝐯𝐮𝐨𝐢 𝐬𝐜𝐨𝐦𝐦𝐞𝐭𝐭𝐞𝐫𝐞?\n𝐄𝐬𝐞𝐦𝐩𝐢𝐨: ${usedPrefix}slot 30\n══════ •⊰✦⊱• ══════\n𝐕𝐢𝐧𝐜𝐢𝐭𝐚: +150\n𝐏𝐞𝐫𝐝𝐢𝐭𝐚: -30\n══════ •⊰✦⊱• ══════`;
-
-        if (isNaN(scommessa) || scommessa <= 0) 
-            throw '𝐋𝐚 𝐬𝐜𝐨𝐦𝐦𝐞𝐬𝐬𝐚 𝐝𝐞𝐯𝐞 𝐞𝐬𝐬𝐞𝐫𝐞 𝐮𝐧 𝐯𝐚𝐥𝐨𝐫𝐞 𝐧𝐮𝐦𝐞𝐫𝐢𝐜𝐨 𝐩𝐨𝐬𝐢𝐭𝐢𝐯𝐨!';
-        
-        if (scommessa > users.money) 
-            throw `𝐒𝐞𝐢 𝐭𝐫𝐨𝐩𝐩𝐨 𝐩𝐨𝐯𝐞𝐫𝐨 𝐩𝐞𝐫 𝐢 𝐠𝐢𝐨𝐜𝐡𝐢 𝐝'𝐚𝐳𝐳𝐚𝐫𝐝𝐨.\n𝐓𝐢 𝐦𝐚𝐧𝐜𝐚𝐧𝐨 ${scommessa - users.money}€.`;
-
-        // Simboli della slot machine
-        let emojis = ["💎", "💰", "👑"];
-        let x = [], y = [], z = [];
-        
-        // Generazione casuale delle linee
-        for (let i = 0; i < 3; i++) x[i] = emojis[Math.floor(Math.random() * emojis.length)];
-        for (let i = 0; i < 3; i++) y[i] = emojis[Math.floor(Math.random() * emojis.length)];
-        for (let i = 0; i < 3; i++) z[i] = emojis[Math.floor(Math.random() * emojis.length)];
-        
-        // Risultati
-        let end;
-        if (x[1] === y[1] && y[1] === z[1]) {
-            end = `🎉 𝐇𝐀𝐈 𝐕𝐈𝐍𝐓𝐎\n💸 𝐇𝐚𝐢 𝐯𝐢𝐧𝐭𝐨: +${scommessa * 5}€`;
-            users.money += scommessa * 5;
-        } else if (x[1] === y[1] || x[1] === z[1] || y[1] === z[1]) {
-            end = `𝐂𝐨𝐧𝐭𝐢𝐧𝐮𝐚 𝐚 𝐭𝐞𝐧𝐭𝐚𝐫𝐞!\n💸 𝐇𝐚𝐢 𝐩𝐞𝐫𝐬𝐨: -${scommessa}€`;
-            users.money -= scommessa;
-        } else {
-            end = `😢 𝐇𝐀𝐈 𝐏𝐄𝐑𝐒𝐎\n💸 𝐇𝐚𝐢 𝐩𝐞𝐫𝐬𝐨: -${scommessa}€`;
-            users.money -= scommessa;
-        }
-        
-        // Formattazione del risultato
-        return await m.reply(`\t🎰 𝐒𝐋𝐎𝐓 𝐌𝐀𝐂𝐇𝐈𝐍𝐄 🎰
-        
-        \t\t${x[0]} ┃ ${y[0]} ┃ ${z[0]}
-        \t\t${x[1]} ┃ ${y[1]} ┃ ${z[1]}
-        \t\t${x[2]} ┃ ${y[2]} ┃ ${z[2]}
-        
-${end}`);
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    let user = global.db.data.users[m.sender]
+    let bet = args[0] ? parseInt(args[0]) : 20
+    
+    if (isNaN(bet) || bet <= 0) {
+        return conn.reply(m.chat, '❌ Puntata non valida.\nEsempio: *' + usedPrefix + command + ' 100*', m)
     }
-};
 
-handler.help = ['slot <importo>'];
-handler.tags = ['game'];
-handler.command = /^(slot)$/i;
-export default handler;
+    if ((user.limit || 0) < bet) {
+        return conn.reply(m.chat, '🚫 UC insufficienti! Ti servono ' + bet + ' UC.', m)
+    }
+
+    if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < 300000) {
+        let timeLeft = cooldowns[m.sender] + 300000 - Date.now()
+        let min = Math.floor(timeLeft / 60000)
+        let sec = Math.floor((timeLeft % 60000) / 1000)
+        return conn.reply(m.chat, '⏳ Aspetta ' + min + 'm ' + sec + 's prima di giocare di nuovo.', m)
+    }
+
+    let win = Math.random() < 0.5
+    let resultMsg, gifFile
+
+    // Calcola informazioni livello e XP
+    user.exp = Number(user.exp) || 0
+    user.level = Number(user.level) || 1
+    let { min: minXP, xp: levelXP, max: maxXP } = xpRange(user.level, global.multiplier || 1)
+    let currentLevelXP = user.exp - minXP
+
+    if (win) {
+        user.limit = (user.limit || 0) + 800
+        user.exp = (user.exp || 0) + 100
+        resultMsg = '🎉 *Hai vinto!*\n'
+        resultMsg += '┌──────────────\n'
+        resultMsg += '│ ➕ *800 UC*\n'
+        resultMsg += '│ ➕ *100 XP*\n'
+        resultMsg += '└──────────────\n'
+        gifFile = './icone/perdita.gif'  // Cambiato in GIF
+    } else {
+        user.limit = (user.limit || 0) - bet
+        user.exp = Math.max(0, (user.exp || 0) - bet)
+        resultMsg = '🤡 *Hai perso!*\n'
+        resultMsg += '┌──────────────\n'
+        resultMsg += '│ ➖ *' + bet + ' UC*\n'
+        resultMsg += '│ ➖ *' + bet + ' XP*\n'
+        resultMsg += '└──────────────\n'
+        gifFile = './icone/vincita.gif'  // Cambiato in GIF
+    }
+
+    // Aggiungi informazioni saldo attuale
+    resultMsg += '\n💎 *SALDO ATTUALE*\n'
+    resultMsg += '┌──────────────\n'
+    resultMsg += '│ 👛 *UC: ' + (user.limit || 0) + '*\n'
+    resultMsg += '│ ⭐ *XP: ' + (user.exp || 0) + '*\n'
+    resultMsg += '│ 📊 *Progresso: ' + currentLevelXP + '/' + levelXP + ' XP*\n'
+    resultMsg += '└──────────────\n'
+    resultMsg += '\nℹ️ Usa ' + usedPrefix + 'menuxp per guadagnare più XP!'
+
+    // Invia la GIF invece del video
+    await conn.sendMessage(m.chat, { 
+        video: { url: gifFile }, 
+        gifPlayback: true 
+    }, { quoted: m })
+
+    cooldowns[m.sender] = Date.now()
+    
+    // Aspetta 3 secondi e manda il risultato
+    await new Promise(resolve => setTimeout(resolve, 3000))
+    await conn.reply(m.chat, resultMsg, m)
+}
+
+handler.help = ['slot <puntata>']
+handler.tags = ['game']
+handler.command = ['slot']
+
+export default handler
+
+// Funzione xpRange dal tuo codice di esempio
+function xpRange(level, multiplier = 1) {
+    if(level < 0) level = 0
+    let min = level === 0 ? 0 : Math.pow(level, 2) * 20
+    let max = Math.pow(level + 1, 2) * 20
+    let xp = Math.floor((max - min) * multiplier)
+    return { min, xp, max }
+}
+
+

@@ -1,4 +1,4 @@
-let { downloadContentFromMessage } = (await import('@whiskeysockets/baileys'));
+let { downloadContentFromMessage } = (await import('@realvare/based'));
 
 let handler = async (m, { conn }) => {
     if (!m.quoted) throw '𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐚 𝐮𝐧𝐚 𝐟𝐨𝐭𝐨¹'

@@ -1,18 +1,19 @@
-let handler = async (m, { conn, args }) => {
-let group = m.chat
-let prova = { "key": {"participants":"0@s.whatsapp.net", "fromMe": false, "id": "Halo"
-  }, "message": {
-  "locationMessage": { name: '𝐋͎𝕀𝐍𝐊 𝐃𝚵𝐋͎ 𝐆𝐑𝐔𝐏𝐏Ꮻ 🔗',
-"jpegThumbnail": fs.readFileSync('./icone/link.png'),
-"vcard":
-`BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
-}}, "participant": "0@s.whatsapp.net"
+const handler = async (m, { conn, args }) => {
+    const metadata = await conn.groupMetadata(m.chat)
+    
+    await conn.sendMessage(m.chat, {
+  text: `Link del gruppo: *${metadata.subject}*`,
+  footer: 'Clicca il bottone per copiare il link negli appunti',
+  interactiveButtons: [
+    { name: 'cta_copy', buttonParamsJson: JSON.stringify({ display_text: 'Copia', copy_code: 'https://chat.whatsapp.com/' + await conn.groupInviteCode(m.chat) }) }
+  ],
+}, { quoted: m })
 }
-let link = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group)
-conn.reply(m.chat, link, prova, m, {detectLink: true})
-//conn.sendMessage(m.chat, { text: link }, { quoted: m, detectLink: true })
-}
+
+handler.help = ['linkgroup']
+handler.tags = ['group']
 handler.command = /^link(gro?up)?$/i
 handler.group = true
 handler.botAdmin = true
+
 export default handler

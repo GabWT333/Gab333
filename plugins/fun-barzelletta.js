@@ -1,44 +1,48 @@
-const handler = async (m, { conn }) => {
-    // Lista di 30 barzellette
-    const barzellette = [
-        "Perché il pomodoro non riesce a dormire? Perché il letto è di lattuga!",
-        "Qual è il colmo per un elettricista? Non avere tensioni!",
-        "Cosa fa una triglia in un campo di calcio? Il trigliare di rigore!",
-        "Perché il mare è salato? Perché i pesci fanno i salti di gioia!",
-        "Cosa fa un gallo in palestra? Il sollevamento pulcini!",
-        "Qual è il colmo per un giardiniere? Avere un brutto carattere!",
-        "Qual è il colmo per un pasticciere? Fare una brutta figura!",
-        "Perché le galline non parlano? Perché sono tutte senza becco…!",
-        "Perché i pesci non hanno bisogno di soldi? Perché hanno già il conto in banca!",
-        "Cosa fa un prete in palestra? Il sollevamento spiritico!",
-        "Qual è il colmo per un ladro? Avere una faccia da galera!",
-        "Che cos’è una zebra? Un cavallo evaso di prigione!",
-        "Perché i carabinieri mettono la sveglia sul comodino? Perché sul letto non ci sta!",
-        "Perché il computer ha freddo? Perché lascia sempre le finestre aperte!",
-        "Cosa fa un'ape sulla luna? Un'ape lunare!",
-        "Qual è il colmo per un orologiaio? Avere un brutto tempo!",
-        "Perché gli scheletri non dicono bugie? Perché non hanno la faccia tosta!",
-        "Cosa fa un vigile urbano nel deserto? Il controllo del traffico a cammello!",
-        "Perché i fantasmi non vanno in discoteca? Perché hanno paura di essere smaterializzati!",
-        "Che cosa dice una pallina da ping pong a un’altra? Ti faccio rimbalzare!",
-        "Perché il libro di matematica era triste? Perché aveva troppi problemi!",
-        "Cosa fa una mucca in mezzo al mare? Il latte condensato!",
-        "Perché le fragole non vanno mai in vacanza? Perché finiscono sempre in marmellata!",
-        "Cosa dice un vigile a un semaforo? Non guardarmi, sono rosso!",
-        "Perché il lampione non va a scuola? Perché già illumina la strada!",
-        "Cosa fa un vigile urbano in giardino? Regola il traffico di lumache!",
-        "Perché gli orologi non si annoiano mai? Perché passano il tempo!",
-        "Perché il sole non ha amici? Perché brucia sempre tutti!",
-        "Perché il gatto studia matematica? Per imparare le radici quadrate!"
-    ];
+const { generateWAMessageFromContent, proto } = (await import('@realvare/based')).default
 
-    // Seleziona una barzelletta casuale
-    const barzellettaCasuale = barzellette[Math.floor(Math.random() * barzellette.length)];
+var handler = async (m, { conn, text}) => {
 
-    // Invia la barzelletta come messaggio
-    await conn.sendMessage(m.chat, { text: barzellettaCasuale }, { quoted: m });
-};
+const emoji2 = "😂"; // Emoji di default per le barzellette
 
-// Definizione del comando
-handler.command = ['barzelletta'];
-export default handler;
+conn.reply(m.chat, `${emoji2} Cerco una barzelletta, attendi un momento...`, m)
+
+conn.reply(m.chat, `*┏━_͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡_͜͡━┓*\n\n❥ *"${pickRandom(global.barzelletta)}"*\n\n*┗━_͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡_͜͡━┛*`, m)
+
+}
+handler.help = ['barzelletta']
+handler.tags = ['fun']
+handler.command = ['barzelletta']
+handler.fail = null
+handler.exp = 0
+handler.group = true;
+handler.register = true
+
+export default handler
+
+let hasil = Math.floor(Math.random() * 5000)
+function pickRandom(list) {
+return list[Math.floor(list.length * Math.random())]
+}
+
+global.barzelletta = [
+  "Qual è l’ultimo animale salito sull’arca di Noè? Il delfino.",
+  "Come si dice fazzoletto in giapponese? Saka-moko.",
+  "Come si dice sparo in arabo? Ahì-va-la-bala.",
+  "Cosa dice un verme a un altro verme? Vado a fare un giro alla mela.",
+  "Un gatto inizia ad abbaiare sul tetto di una casa. Un altro gatto, sorpreso, gli dice: Sei matto gatto, perché abbai invece di miagolare? Il gattino risponde: Non posso forse imparare un’altra lingua?",
+  "Il dottore dice al paziente: respiri profondamente che la ausculto. Il paziente risponde: dottore, da chi mi deve nascondere se non devo niente a nessuno?",
+  "Dopo un parto il padre chiede: Dottore, com’è andata? Il dottore: tutto bene, ma abbiamo dovuto mettere ossigeno al bambino. Il padre, sconvolto: ma noi volevamo chiamarlo Gabriele!",
+  "Un pesce chiede a un altro pesce: cosa fa tua mamma? Questo risponde: Nuota, e la tua? Nuota anche lei.",
+  "Qual è il colmo per Aladino? Avere un brutto genio.",
+  "Il professore dice allo studente dopo aver corretto il compito: Il tuo lavoro mi ha commosso. Lo studente, sorpreso, chiede: E perché professore? Il professore: Perché mi ha fatto tanta pena.",
+  "Il bambino dice alla mamma: Mamma, non voglio più giocare con Pierino. La mamma: Perché? Perché quando giochiamo con i mattoncini e gliene tiro uno in testa, si mette a piangere.",
+  "La maestra chiede a Gianluca: Cosa faresti se stessi annegando in piscina? Gianluca risponde: Mi metterei a piangere tanto per sfogarmi.",
+  "Mamma, mi vedo grassa, brutta e vecchia. Cosa ho? Mamma, hai proprio ragione.",
+  "Come si dice capelli sporchi in cinese? Chin cham pu.",
+  "C’era una volta un bambino così, ma così distratto che... vabbè, mi sono dimenticato la barzelletta!",
+  "Un’amica chiede a un’altra: Come va la vita da sposata? Non mi posso lamentare, dice lei. Quindi va bene? No, non mi posso lamentare perché mio marito è qui vicino.",
+  "Perché le foche guardano sempre in alto? Perché lì ci sono i fari!",
+  "Cameriere, questa bistecca è molto nervosa. È normale, è la prima volta che la mangiano.",
+  "Come si chiama il cugino di Bruce Lee? Broco Lee.",
+  "Una mamma dice al figlio: Giacomino, mi ha detto un uccellino che ti droghi. Quella che si droga sei tu, che parli con gli uccellini."
+]

@@ -1,43 +1,50 @@
 import moment from 'moment-timezone'
 
 let handler = async (m, { conn }) => {
-  const zonas = [
-    { name: 'Peru', tz: 'America/Lima' },
-    { name: 'Mexico', tz: 'America/Mexico_City' },
-    { name: 'Bolivia', tz: 'America/La_Paz' },
-    { name: 'Chile', tz: 'America/Santiago' },
-    { name: 'Argentina', tz: 'America/Argentina/Buenos_Aires' },
-    { name: 'Colombia', tz: 'America/Bogota' },
-    { name: 'Ecuador', tz: 'America/Guayaquil' },
-    { name: 'Costa Rica', tz: 'America/Costa_Rica' },
-    { name: 'Cuba', tz: 'America/Havana' },
-    { name: 'Guatemala', tz: 'America/Guatemala' },
-    { name: 'Honduras', tz: 'America/Tegucigalpa' },
-    { name: 'Nicaragua', tz: 'America/Managua' },
-    { name: 'Panama', tz: 'America/Panama' },
-    { name: 'Uruguay', tz: 'America/Montevideo' },
-    { name: 'Venezuela', tz: 'America/Caracas' },
-    { name: 'Paraguay', tz: 'America/Asuncion' },
-    { name: 'New York', tz: 'America/New_York' },
-    { name: 'Asia', tz: 'Asia/Jakarta' },
-    { name: 'Brasil', tz: 'America/Sao_Paulo' },
-    { name: 'G.N.Q', tz: 'Africa/Malabo' }
-  ];
-
-  // Creazione della stringa con orari formattati
-  const horarios = zonas.map(zone => {
-    const time = moment().tz(zone.tz).format('DD/MM HH:mm');
-    return `⏱️${zone.name.padEnd(12)}: ${time}`;
-  }).join('\n');
-
-  // Formattazione del messaggio
-  const currentTime = moment().tz(Intl.DateTimeFormat().resolvedOptions().timeZone).format('DD/MM/YY HH:mm:ss');
-  const zonaAttuale = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  // Invio del messaggio con orari e zona attuale
-  await conn.sendMessage(m.chat, {
-    text: `*Orari attuali in diverse zone del mondo:*\n\`\`\`\n${horarios}\n\`\`\`\n*Zona attuale:* ${zonaAttuale}\n*Orario attuale:* ${currentTime}`
-  }, { quoted: m });
+const fechaper = moment().tz('America/Lima').format('DD/MM HH:mm')
+const fechamex = moment().tz('America/Mexico_City').format('DD/MM HH:mm')
+const fechabol = moment().tz('America/La_Paz').format('DD/MM HH:mm')
+const fechachi = moment().tz('America/Santiago').format('DD/MM HH:mm')
+const fechaarg = moment().tz('America/Argentina/Buenos_Aires').format('DD/MM HH:mm')
+const fechacol = moment().tz('America/Bogota').format('DD/MM HH:mm')
+const fechaecu = moment().tz('America/Guayaquil').format('DD/MM HH:mm')
+const fechacosr = moment().tz('America/Costa_Rica').format('DD/MM HH:mm')
+const fechacub = moment().tz('America/Havana').format('DD/MM HH:mm')
+const fechagua = moment().tz('America/Guatemala').format('DD/MM HH:mm')
+const fechahon = moment().tz('America/Tegucigalpa').format('DD/MM HH:mm')
+const fechanic = moment().tz('America/Managua').format('DD/MM HH:mm')
+const fechapan = moment().tz('America/Panama').format('DD/MM HH:mm')
+const fechauru = moment().tz('America/Montevideo').format('DD/MM HH:mm')
+const fechaven = moment().tz('America/Caracas').format('DD/MM HH:mm')
+const fechapar = moment().tz('America/Asuncion').format('DD/MM HH:mm')
+const fechanew = moment().tz('America/New_York').format('DD/MM HH:mm')
+const fechaasi = moment().tz('Asia/Jakarta').format('DD/MM HH:mm')
+const fechabra = moment().tz('America/Sao_Paulo').format('DD/MM HH:mm')
+const fechaafri = moment().tz('Africa/Malabo').format('DD/MM HH:mm')
+await conn.sendMessage(m.chat, { text: `\`\`\`
+Zona:
+⏱️Peru       : ${fechaper}
+⏱️Mexico     : ${fechamex}
+⏱️Bolivia    : ${fechabol}
+⏱️Chile      : ${fechachi}
+⏱️Argentina  : ${fechaarg}
+⏱️Colombia   : ${fechacol}
+⏱️Ecuador    : ${fechaecu}
+⏱️Costa_Rica : ${fechacosr}
+⏱️Cuba       : ${fechacub}
+⏱️Guatemala  : ${fechagua}
+⏱️Honduras   : ${fechahon}
+⏱️Nicaragua  : ${fechanic}
+⏱️Panama     : ${fechapan}
+⏱️Uruguay    : ${fechauru}
+⏱️Venezuela  : ${fechaven}
+⏱️Paraguay   : ${fechapar}
+⏱️New York   : ${fechanew}
+⏱️Asia       : ${fechaasi}
+⏱️Brasil     : ${fechabra}
+⏱️G.N.Q      : ${fechaafri}
+\`\`\`
+${String.fromCharCode(8206).repeat(850)}Zona attuale:\n[ ${Intl.DateTimeFormat().resolvedOptions().timeZone} ]\n${moment().tz(Intl.DateTimeFormat().resolvedOptions().timeZone).format('DD/MM/YY HH:mm:ss')}` }, {quoted: m })
 }
 
 handler.help = ['horario']

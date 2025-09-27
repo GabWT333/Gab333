@@ -21,7 +21,7 @@ export default handler
 
 import formData from 'form-data'
 import fetch from 'node-fetch'
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio'
 var effects = [
   {
     "title": "3d-deep-sea-metal",
@@ -827,16 +827,36 @@ async function textpro(effect, ...texts) {
   })
   let html = await resCookie.text()
   const $$$ = cheerio.load(html)
-  let textRequire = [!!$$$('#text-0').length, !!$$$('#text-1').length, !!$$$('#text-2').length].filter(v => v)
-  // console.log({ textRequire, texts, textRequireLength: textRequire.length, textsLength: texts.length })
-  if (textRequire.length > texts.length) return textRequire.length
-  let cookieParse = (cookie, query) => cookie.includes(query + '=') ? cookie.split(query + '=')[1].split(';')[0] : 'undefined'
-  let hasilcookie = resCookie.headers
-    .get("set-cookie")
-  hasilcookie = {
-    __cfduid: cookieParse(hasilcookie, '__cfduid'),
+  let textRequire = [
+    !!$$$('#text-0').length,
+    !!$$$('#text-1').length,
+    !!$$$('#text-2').length
+].filter(v => v);
+
+// Controllo se texts è definito prima di usarlo
+if (!texts) {
+    console.error("Errore: 'texts' è undefined o null");
+} else if (textRequire.length > texts.length) {
+    return textRequire.length;
+}
+
+let cookieParse = (cookie, query) => {
+    if (!cookie) return 'undefined'; // Controllo per evitare errori
+    return cookie.includes(query + '=') ? cookie.split(query + '=')[1].split(';')[0] : 'undefined';
+};
+
+let hasilcookie = resCookie.headers.get("set-cookie");
+
+// Controllo se hasilcookie è null prima di usarlo
+if (!hasilcookie) {
+    console.error("Errore: 'set-cookie' non trovato nell'header della risposta");
+    hasilcookie = ""; // Imposta un valore predefinito per evitare errori
+}
+
+hasilcookie = {
+    _cfduid: cookieParse(hasilcookie, '_cfduid'),
     PHPSESSID: cookieParse(hasilcookie, 'PHPSESSID')
-  }
+};
   hasilcookie = Object.entries(hasilcookie).map(([nama, value]) => nama + '=' + value).join("; ")
   const $ = cheerio.load(html)
   const token = $('input[name="token"]').attr("value")

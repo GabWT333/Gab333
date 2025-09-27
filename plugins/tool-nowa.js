@@ -1,7 +1,4 @@
-/*---------------------------------------------------------------------------------------
-  🍀 • By https://github.com/ALBERTO9883
-  🍀 • ⚘Alberto Y Ashly⚘
------------------------------------------------------------------------------------------*/
+
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 let regex = /x/g
 if (!text) throw 'numero mancante'
