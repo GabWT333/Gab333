@@ -1,4 +1,3 @@
-
 <div align="center">
 
 # 🌙 333-Bot
@@ -110,74 +109,6 @@ yarn start
 
 ---
 
-### ☁️ Hosting Premium Consigliati
-
-<table>
-<tr>
-<td width="50%">
-
-#### 🔵 CAFIREXOS
-<img src="https://r2.cafirexos.com/logos%2Flogo_cfros_2000x2000.png" width="120"/>
-
-**Prestazioni Ultra-Veloci** ⚡
-
-🌟 **Caratteristiche:**
-- ✅ Uptime 99.9%
-- ✅ Server ad alte prestazioni
-- ✅ Supporto 24/7
-- ✅ Setup automatico
-
-📱 **Link Utili:**
-- 🎛️ [Dashboard](https://dash.cafirexos.com)
-- ⚙️ [Panel](https://panel.cafirexos.com)
-- 💬 [Canale WhatsApp](https://cafirexos.com/whatsapp)
-- 👥 [Gruppo WhatsApp](https://cafirexos.com/comunidad)
-- 📧 [Email](mailto:contacto@cafirexos.com)
-
-👤 **Contatto:** [Diego Flores](https://wa.me/50497150165)
-
-<details>
-<summary>📸 Vedi configurazione server</summary>
-<img src="https://telegra.ph/file/4572591764c7f3f32a33f.png"/>
-</details>
-
-</td>
-<td width="50%">
-
-#### ∞ INFINITY-HOST
-<img src="https://telegra.ph/file/4d847e6cfe03b2b2c77ab.png" width="120"/>
-
-**Hosting Illimitato** ♾️
-
-🌟 **Caratteristiche:**
-- ✅ Storage illimitato
-- ✅ Banda illimitata
-- ✅ Multi-bot support
-- ✅ Auto-restart
-
-📱 **Link Utili:**
-- 🎛️ [Dashboard](https://dashboard.infinitywa.xyz)
-- ⚙️ [Panel](https://live.panel-infinitywa.store)
-- 💬 [Canale WhatsApp](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A)
-- 👥 [Gruppo WhatsApp](https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV)
-- 💳 [PayPal](https://paypal.me/OfcGB)
-
-👥 **Contatti:**
-- [Mario](https://www.facebook.com/elrebelde21)
-- [Azami](https://wa.me/527294888993)
-- [Wilson](https://wa.me/5492964650915)
-
-<details>
-<summary>📸 Vedi configurazione server</summary>
-<img src="https://telegra.ph/file/8da3c7efe17a9c17c661e.png"/>
-</details>
-
-</td>
-</tr>
-</table>
-
----
-
 ### 🆘 Supporto e Problemi
 
 Hai problemi? Ecco come ricevere aiuto:
@@ -281,74 +212,6 @@ yarn start
 | `yarn stop` | Stop the bot |
 | `yarn restart` | Restart the bot |
 | `git pull` | Update the bot |
-
----
-
-### ☁️ Recommended Premium Hosting
-
-<table>
-<tr>
-<td width="50%">
-
-#### 🔵 CAFIREXOS
-<img src="https://r2.cafirexos.com/logos%2Flogo_cfros_2000x2000.png" width="120"/>
-
-**Ultra-Fast Performance** ⚡
-
-🌟 **Features:**
-- ✅ 99.9% Uptime
-- ✅ High-performance servers
-- ✅ 24/7 Support
-- ✅ Auto setup
-
-📱 **Useful Links:**
-- 🎛️ [Dashboard](https://dash.cafirexos.com)
-- ⚙️ [Panel](https://panel.cafirexos.com)
-- 💬 [WhatsApp Channel](https://cafirexos.com/whatsapp)
-- 👥 [WhatsApp Group](https://cafirexos.com/comunidad)
-- 📧 [Email](mailto:contacto@cafirexos.com)
-
-👤 **Contact:** [Diego Flores](https://wa.me/50497150165)
-
-<details>
-<summary>📸 View server configuration</summary>
-<img src="https://telegra.ph/file/4572591764c7f3f32a33f.png"/>
-</details>
-
-</td>
-<td width="50%">
-
-#### ∞ INFINITY-HOST
-<img src="https://telegra.ph/file/4d847e6cfe03b2b2c77ab.png" width="120"/>
-
-**Unlimited Hosting** ♾️
-
-🌟 **Features:**
-- ✅ Unlimited storage
-- ✅ Unlimited bandwidth
-- ✅ Multi-bot support
-- ✅ Auto-restart
-
-📱 **Useful Links:**
-- 🎛️ [Dashboard](https://dashboard.infinitywa.xyz)
-- ⚙️ [Panel](https://live.panel-infinitywa.store)
-- 💬 [WhatsApp Channel](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A)
-- 👥 [WhatsApp Group](https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV)
-- 💳 [PayPal](https://paypal.me/OfcGB)
-
-👥 **Contacts:**
-- [Mario](https://www.facebook.com/elrebelde21)
-- [Azami](https://wa.me/527294888993)
-- [Wilson](https://wa.me/5492964650915)
-
-<details>
-<summary>📸 View server configuration</summary>
-<img src="https://telegra.ph/file/8da3c7efe17a9c17c661e.png"/>
-</details>
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -458,74 +321,6 @@ yarn start
 
 ---
 
-### ☁️ Hosting Premium Recomendados
-
-<table>
-<tr>
-<td width="50%">
-
-#### 🔵 CAFIREXOS
-<img src="https://r2.cafirexos.com/logos%2Flogo_cfros_2000x2000.png" width="120"/>
-
-**Rendimiento Ultra-Rápido** ⚡
-
-🌟 **Características:**
-- ✅ 99.9% Uptime
-- ✅ Servidores de alto rendimiento
-- ✅ Soporte 24/7
-- ✅ Configuración automática
-
-📱 **Enlaces Útiles:**
-- 🎛️ [Dashboard](https://dash.cafirexos.com)
-- ⚙️ [Panel](https://panel.cafirexos.com)
-- 💬 [Canal WhatsApp](https://cafirexos.com/whatsapp)
-- 👥 [Grupo WhatsApp](https://cafirexos.com/comunidad)
-- 📧 [Email](mailto:contacto@cafirexos.com)
-
-👤 **Contacto:** [Diego Flores](https://wa.me/50497150165)
-
-<details>
-<summary>📸 Ver configuración del servidor</summary>
-<img src="https://telegra.ph/file/4572591764c7f3f32a33f.png"/>
-</details>
-
-</td>
-<td width="50%">
-
-#### ∞ INFINITY-HOST
-<img src="https://telegra.ph/file/4d847e6cfe03b2b2c77ab.png" width="120"/>
-
-**Hosting Ilimitado** ♾️
-
-🌟 **Características:**
-- ✅ Almacenamiento ilimitado
-- ✅ Ancho de banda ilimitado
-- ✅ Soporte multi-bot
-- ✅ Auto-reinicio
-
-📱 **Enlaces Útiles:**
-- 🎛️ [Dashboard](https://dashboard.infinitywa.xyz)
-- ⚙️ [Panel](https://live.panel-infinitywa.store)
-- 💬 [Canal WhatsApp](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A)
-- 👥 [Grupo WhatsApp](https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV)
-- 💳 [PayPal](https://paypal.me/OfcGB)
-
-👥 **Contactos:**
-- [Mario](https://www.facebook.com/elrebelde21)
-- [Azami](https://wa.me/527294888993)
-- [Wilson](https://wa.me/5492964650915)
-
-<details>
-<summary>📸 Ver configuración del servidor</summary>
-<img src="https://telegra.ph/file/8da3c7efe17a9c17c661e.png"/>
-</details>
-
-</td>
-</tr>
-</table>
-
----
-
 ### 🆘 Soporte y Problemas
 
 ¿Tienes problemas? Aquí te decimos cómo obtener ayuda:
@@ -554,10 +349,10 @@ Este proyecto está liberado bajo licencia [MIT](LICENSE)
 
 <div align="center">
 
-### 🌟 Made with ❤️ by MoonContentCreator
+### 🌟 Made with ❤️ by Gab333
 
 [![GitHub](https://img.shields.io/badge/GitHub-MoonContentCreator-black?style=for-the-badge&logo=github)](https://github.com/MoonContentCreator)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029Va8SHGnId7nJi8Zdnz3x)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
 
 **© 2024 333-Bot - All Rights Reserved**
 
