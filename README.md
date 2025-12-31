@@ -7,7 +7,7 @@
 [![English](https://img.shields.io/badge/🇬🇧_English-red?style=for-the-badge)](#-english) 
 [![Español](https://img.shields.io/badge/🇪🇸_Español-yellow?style=for-the-badge)](#-español)
 
-<img src="https://telegra.ph/file/c31a290ce6bb4e5ce63cd.png" width="200"/>
+<img src="https://qu.ax/Um17w" width="200"/>
 
 ### ⚡ Powered by Advanced AI Technology
 
