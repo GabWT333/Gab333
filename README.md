@@ -23,7 +23,7 @@
 [![Open Source](https://img.shields.io/badge/Open_Source-❤️-ff69b4?style=for-the-badge)](https://github.com/GabWT333/Gab333)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success?style=for-the-badge)](https://github.com/GabWT333/Gab333/graphs/commit-activity)
 
-<img src="https://telegra.ph/file/53876cbad328d8cf55bac.png" width="600"/>
+<img src="https://qu.ax/j6ZJa" width="600"/>
 
 ---
 
