@@ -108,9 +108,8 @@ yarn start
 
 | Comando | Descrizione |
 |---------|-------------|
-| `yarn start` | Avvia il bot |
-| `yarn stop` | Ferma il bot |
-| `yarn restart` | Riavvia il bot |
+| `npm start` | Avvia il bot |
+| `CTRL + c ` | Ferma il bot |
 | `git pull` | Aggiorna il bot |
 
 ---
