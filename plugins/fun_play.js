@@ -1,7 +1,3 @@
-//Plugin by Gab, Lucifero & 333 staff
-
-
-
 import yts from 'yt-search'
 import { exec } from 'child_process'
 import fs from 'fs'
@@ -43,7 +39,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 𝐕𝐮𝐨𝐢 𝐚𝐮𝐝𝐢𝐨 𝐨  𝐯𝐢𝐝𝐞𝐨🎥?`,
       buttons: [
-        { buttonId: ".play_audio", buttonText: { displayText: "🎧 𝐀𝐮𝐝𝐢𝐨" }, type: 1 },
+        { buttonId: ".play_audio", buttonText: { displayText: "🎧 𝐀𝐮𝐝𝐢ο" }, type: 1 },
         { buttonId: ".play_video", buttonText: { displayText: "🎥 𝐕𝐢𝐝𝐞𝐨" }, type: 1 }
       ],
       headerType: 1
@@ -56,7 +52,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (command === "play_audio") {
 
     let infoMsg = `
-ℹ️ 𝐑𝐢𝐬𝐮𝐥𝐭𝐚𝐭𝐨:
+ℹ️ 𝐑𝐢𝐬𝐮𝐥𝐭𝐚𝐭ο:
 
 *${video.title}*
 
@@ -121,13 +117,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       await execPromise(
         `yt-dlp --no-playlist ` +
         `-f "bestvideo[vcodec^=avc1][height<=480]+bestaudio[acodec^=mp4a]/best[vcodec^=avc1][height<=480]/best[height<=480]" ` +
-        `--merge-output-format mp4 --ffmpeg-location /usr/bin/ffmpeg ` +
+        `--merge-output-format mp4 ` +
         `--no-part --retries 3 ` +
         `-o "${raw}" "${video.url}"`
       )
 
       await execPromise(
-        `/usr/bin/ffmpeg -y -i "${raw}" ` +
+        `ffmpeg -y -i "${raw}" ` +
         `-c:v libx264 -preset ultrafast -crf 30 ` +
         `-vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ` +
         `-c:a aac -b:a 96k -movflags +faststart "${out}"`
