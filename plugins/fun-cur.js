@@ -1,3 +1,5 @@
+//Codice di fun-cur.js
+
 //Plugin by Gab, Lucifero & 333 staff
 
 
@@ -34,15 +36,17 @@ const getUsernameFromId = (id) => Object.keys(db).find(key => key === id) || id;
 const LASTFM_API_KEY = '36f859a1fc4121e7f0e931806507d5f9';
 
 async function getRecentTrack(username) {
-  const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
+  const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${encodeURIComponent(username)}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
   const res  = await fetch(url);
+  if (!res.ok) return null;
   const json = await res.json();
   return json?.recenttracks?.track?.[0];
 }
 
 async function getTopArtists(username) {
-  const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${username}&api_key=${LASTFM_API_KEY}&format=json&period=7day&limit=3`;
+  const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${encodeURIComponent(username)}&api_key=${LASTFM_API_KEY}&format=json&period=7day&limit=3`;
   const res  = await fetch(url);
+  if (!res.ok) return null;
   const json = await res.json();
   return json?.topartists?.artist;
 }
@@ -86,7 +90,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
     }
 
     const songTitle  = track.name;
-    const artistName = track.artist['#text'];
+    const artistName = track.artist?.['#text'] || 'Sconosciuto';
     const searchQuery = `${songTitle} ${artistName}`;
 
 
@@ -119,7 +123,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
   }
 
  
-  if (command === 'top') {
+  if (command === 'top' || command === 'stats') {
     const artists = await getTopArtists(user);
     if (!artists?.length) {
       return conn.sendMessage(m.chat, { text: '❌ Nessun dato trovato.' });
@@ -180,7 +184,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
   }
 };
 
-handler.command = ['setuser', 'profilo', 'cur', 'stats', 'fuoco', 'like'];
+handler.command = ['setuser', 'profilo', 'cur', 'top', 'stats', 'fuoco', 'like'];
 handler.help    = ['𝐜𝐮𝐫/𝐭𝐨𝐩', '𝐟𝐮𝐨𝐜𝐨/𝐥𝐢𝐤𝐞'];
 handler.tags    = ['fun'];
 handler.group   = true;
