@@ -1,3 +1,5 @@
+//Codice di lastfm-card.js
+
 //Plugin by Gab, Lucifero & 333 staff
 
 /**
@@ -11,19 +13,41 @@
  */
 
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
+
+const FALLBACK_ALBUM_ART =
+  'https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png';
+
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function getAlbumArt(track) {
+  return track?.image?.find(i => i.size === 'extralarge')?.[`#text`] ||
+    track?.image?.find(i => i.size === 'large')?.[`#text`] ||
+    FALLBACK_ALBUM_ART;
+}
 
 
 
 function buildHTML(track, username) {
-  const albumArt =
-    track.image?.find(i => i.size === 'extralarge')?.[`#text`] ||
-    track.image?.find(i => i.size === 'large')?.[`#text`] ||
-    'https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png';
+  const albumArt = getAlbumArt(track);
 
   const isPlaying  = track['@attr']?.nowplaying === 'true';
   const songName   = track.name            || 'Sconosciuto';
-  const artistName = track.artist['#text'] || 'Sconosciuto';
+  const artistName = track.artist?.['#text'] || 'Sconosciuto';
   const albumName  = track.album?.['#text'] || 'Album sconosciuto';
+  const safeAlbumArt = escapeHtml(albumArt);
+  const safeSongName = escapeHtml(songName);
+  const safeArtistName = escapeHtml(artistName);
+  const safeAlbumName = escapeHtml(albumName);
+  const safeUsername = escapeHtml(username);
 
   const titleSize  = Math.max(16, 34 - Math.max(0, songName.length   - 20) * 0.5);
   const artistSize = Math.max(13, 22 - Math.max(0, artistName.length - 25) * 0.3);
@@ -43,7 +67,7 @@ body { width:800px; height:400px; overflow:hidden; font-family:'DM Sans',sans-se
 .card { position:relative; width:800px; height:400px; display:flex; overflow:hidden; background:#111; }
 .bg-blur {
   position:absolute; inset:0;
-  background-image:url('${albumArt}');
+  background-image:url("${safeAlbumArt}");
   background-size:cover; background-position:center;
   filter:blur(40px) brightness(0.3) saturate(1.5);
   transform:scale(1.1); z-index:0;
@@ -98,14 +122,14 @@ body { width:800px; height:400px; overflow:hidden; font-family:'DM Sans',sans-se
 <body>
 <div class="card">
   <div class="bg-blur"></div>
-  <img class="cover" src="${albumArt}" onerror="this.style.background='#222';this.removeAttribute('src')" />
+  <img class="cover" src="${safeAlbumArt}" onerror="this.style.background='#222';this.removeAttribute('src')" />
   <div class="info">
     <div class="status"><div class="dot"></div>${statusText}</div>
-    <div class="song-title">${songName}</div>
-    <div class="artist">${artistName}</div>
-    <div class="album">${albumName}</div>
+    <div class="song-title">${safeSongName}</div>
+    <div class="artist">${safeArtistName}</div>
+    <div class="album">${safeAlbumName}</div>
     <div class="divider"></div>
-    <div class="user-tag">🎧 <span>${username}</span></div>
+    <div class="user-tag">Last.fm <span>${safeUsername}</span></div>
   </div>
   <div class="lastfm-logo">Last.fm</div>
 </div>
@@ -159,14 +183,11 @@ async function renderWithCanvas(track, username) {
   const canvas = createCanvas(800, 400);
   const ctx    = canvas.getContext('2d');
 
-  const albumArt =
-    track.image?.find(i => i.size === 'extralarge')?.[`#text`] ||
-    track.image?.find(i => i.size === 'large')?.[`#text`] ||
-    'https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png';
+  const albumArt = getAlbumArt(track);
 
   const isPlaying  = track['@attr']?.nowplaying === 'true';
   const songName   = track.name            || 'Sconosciuto';
-  const artistName = track.artist['#text'] || 'Sconosciuto';
+  const artistName = track.artist?.['#text'] || 'Sconosciuto';
   const albumName  = track.album?.['#text'] || 'Album sconosciuto';
 
   ctx.fillStyle = '#111111';
@@ -260,7 +281,7 @@ export async function sendImage(conn, m, buffer, caption = '', buttons = []) {
 
 
 
-  const tmp = `/tmp/lastfm_${Date.now()}.png`;
+  const tmp = path.join(os.tmpdir(), `lastfm_${Date.now()}.png`);
   fs.writeFileSync(tmp, buffer);
 
   try {
