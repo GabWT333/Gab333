@@ -100,7 +100,7 @@ pkg install git nodejs ffmpeg imagemagick -y
 cd ~
 git clone https://github.com/TUO-USERNAME/Gab333-main.git
 
-% Entra nella cartella
+# Entra nella cartella
 
 cd Gab333-main
 
