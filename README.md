@@ -87,28 +87,28 @@ Apri Termux e copia-incolla questi comandi:
 
 termux-setup-storage
 
-Aggiorna pacchetti
+# Aggiorna pacchetti
 
 pkg update && pkg upgrade -y
 
-Installa dipendenze
+# Installa dipendenze
 
 pkg install git nodejs ffmpeg imagemagick -y
 
-Clona il bot
+# Clona il bot
 
 cd ~
 git clone https://github.com/TUO-USERNAME/Gab333-main.git
 
-Entra nella cartella
+% Entra nella cartella
 
 cd Gab333-main
 
-Installa dipendenze
+# Installa dipendenze
 
 npm install
 
-Avvia il bot
+# Avvia il bot
 
 npm start
 ```
@@ -406,7 +406,7 @@ Este proyecto está liberado bajo licencia [MIT](LICENSE)
 
 <div align="center">
 
-### 🌟 Made with ❤️ by GabWT333
+### 🌟 Made with ❤️ by GabWT333 % LuciferoWT333
 
 [![GitHub](https://img.shields.io/badge/GitHub-GabWT333-black?style=for-the-badge&logo=github)](https://github.com/GabWT333)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
@@ -414,7 +414,8 @@ Este proyecto está liberado bajo licencia [MIT](LICENSE)
 
 **💻 JavaScript | Python Developer**
 
-📱 **WhatsApp:** +39 350 833 7404
+📱 **WhatsApp:** +39 389 243 0108
+📱 **WhatsApp:** +39 329 424 1699
 
 **© 2024 333-Bot - All Rights Reserved**
 
