@@ -83,7 +83,7 @@ Apri Termux e copia-incolla questi comandi:
 ```bash
 📦 Installazione 333 Bot su Termux
 
-Permessi storage
+# Permessi storage
 
 termux-setup-storage
 
