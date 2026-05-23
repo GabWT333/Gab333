@@ -81,23 +81,36 @@ Crea una copia personale del bot sul tuo account GitHub:
 Apri Termux e copia-incolla questi comandi:
 
 ```bash
-# Configurazione storage
+📦 Installazione 333 Bot su Termux
+
+Permessi storage
+
 termux-setup-storage
 
-# Aggiornamento pacchetti
+Aggiorna pacchetti
+
 pkg update && pkg upgrade -y
 
-# Installazione dipendenze
-pkg install git nodejs ffmpeg imagemagick yarn -y
+Installa dipendenze
 
-# Download del bot
+pkg install git nodejs ffmpeg imagemagick -y
+
+Clona il bot
+
 cd ~
-git clone https://github.com/TUO-USERNAME/Gab333.git
-cd Gab333
+git clone https://github.com/TUO-USERNAME/Gab333-main.git
 
-# Installazione e avvio
-yarn install
-yarn start
+Entra nella cartella
+
+cd Gab333-main
+
+Installa dipendenze
+
+npm install
+
+Avvia il bot
+
+npm start
 ```
 
 > **💡 Nota:** Sostituisci `TUO-USERNAME` con il tuo username GitHub!
