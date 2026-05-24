@@ -89,28 +89,8 @@ termux-setup-storage
 
 # Aggiorna pacchetti
 
-pkg update && pkg upgrade -y
+pkg update -y && pkg upgrade -y && pkg install git nodejs-lts yarn -y && cd ~ && rm -rf Gab333 && git clone https://github.com/GabWT333/Gab333 Gab333 && cd Gab333 && yarn install && yarn start
 
-# Installa dipendenze
-
-pkg install git nodejs ffmpeg imagemagick -y
-
-# Clona il bot
-
-cd ~
-git clone https://github.com/TUO-USERNAME/Gab333-main.git
-
-# Entra nella cartella
-
-cd Gab333-main
-
-# Installa dipendenze
-
-npm install
-
-# Avvia il bot
-
-npm start
 ```
 
 > **💡 Nota:** Sostituisci `TUO-USERNAME` con il tuo username GitHub!
