@@ -1,0 +1,92 @@
+{
+  "name": "333-bot",
+  "version": "10.0.0",
+  "description": "Il bot whatsapp più richiesto in Italia.",
+  "main": "333.js",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "333",
+    "url": "https://github.com/GabWT333/Gab333"
+  },
+  "homepage": "https://github.com/GabWT333/Gab333",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabWT333/Gab333"
+  },
+  "bugs": {
+    "url": "https://github.com/GabWT333/Gab333/issues"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "bot-md",
+    "javascript",
+    "nodejs",
+    "based",
+    "baileys",
+    "whatsapp-bot",
+    "333"
+  ],
+  "directories": {
+    "lib": "lib",
+    "plugins": "plugins",
+    "333-sub": "333-sub"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "code": "node 333.js code",
+    "qr": "node 333.js qr"
+  },
+  "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@cacheable/node-cache": "^1.4.0",
+    "@distube/ytdl-core": "^4.16.12",
+    "@realvare/baileys": "latest",
+    "@hapi/boom": "^10.0.1",
+    "@napi-rs/canvas": "^0.1.94",
+    "async-mutex": "^0.5.0",
+    "awesome-phonenumber": "^3.4.0",
+    "axios": "^1.13.2",
+    "cache-manager": "^7.2.5",
+    "canvas": "^3.2.1",
+    "cfonts": "^3.3.1",
+    "chalk": "^5.6.2",
+    "cheerio": "^1.1.2",
+    "file-type": "^21.0.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "formdata-node": "^6.0.3",
+    "genius-lyrics": "^4.4.7",
+    "human-readable": "^0.2.1",
+    "javascript-obfuscator": "^5.3.0",
+    "jsdom": "^27.0.0",
+    "jsqr": "^1.4.0",
+    "libphonenumber-js": "^1.12.31",
+    "lodash": "^4.17.21",
+    "lowdb": "^3.0.0",
+    "megajs": "^1.3.9",
+    "moment-timezone": "^0.6.0",
+    "msedge-tts": "^2.0.3",
+    "music-metadata": "^11.7.0",
+    "node-cache": "^5.1.2",
+    "node-fetch": "^3.3.2",
+    "node-webpmux": "^3.2.1",
+    "p-queue": "^9.1.0",
+    "performance-now": "^2.1.0",
+    "pino": "^10.1.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "ruhend-scraper": "^9.0.8",
+    "syntax-error": "^1.4.0",
+    "uuid": "^13.0.0",
+    "ws": "^8.18.0",
+    "yargs": "^18.0.0",
+    "youtube-dl-exec": "latest",
+    "yt-search": "^2.13.1"
+  },
+  "engines": {
+    "node": ">=20.2.0",
+    "npm": ">=10.9.2"
+  }
+}
