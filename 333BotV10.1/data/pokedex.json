@@ -1,0 +1,94 @@
+{
+  "393508337404@s.whatsapp.net": {
+    "catturati": {
+      "550": {
+        "id": 550,
+        "name": "basculin-red-striped",
+        "hp": 70,
+        "atk": 92,
+        "def": 65,
+        "spatk": 80,
+        "spd": 98,
+        "types": [
+          "water"
+        ],
+        "moves": [
+          "SWIFT",
+          "FINAL GAMBIT",
+          "CRUNCH",
+          "WHIRLPOOL"
+        ],
+        "catturato": "27/02/2026"
+      },
+      "897": {
+        "id": 897,
+        "name": "spectrier",
+        "hp": 100,
+        "atk": 65,
+        "def": 60,
+        "spatk": 145,
+        "spd": 130,
+        "types": [
+          "ghost"
+        ],
+        "moves": [
+          "SHADOW BALL",
+          "TACKLE",
+          "PSYCHIC",
+          "WILL O WISP"
+        ],
+        "catturato": "27/02/2026"
+      }
+    },
+    "ultimaCattura": 1772157362435
+  },
+  "393792802388@s.whatsapp.net": {
+    "catturati": {
+      "943": {
+        "id": 943,
+        "name": "mabosstiff",
+        "hp": 80,
+        "atk": 120,
+        "def": 90,
+        "spatk": 60,
+        "spd": 85,
+        "types": [
+          "dark"
+        ],
+        "moves": [
+          "OUTRAGE",
+          "LICK",
+          "ROAR",
+          "FAKE TEARS"
+        ],
+        "catturato": "04/04/2026"
+      }
+    },
+    "ultimaCattura": 1775327162144
+  },
+  "393770491668@s.whatsapp.net": {
+    "catturati": {
+      "557": {
+        "id": 557,
+        "name": "dwebble",
+        "hp": 50,
+        "atk": 65,
+        "def": 85,
+        "spatk": 35,
+        "spd": 55,
+        "types": [
+          "bug",
+          "rock"
+        ],
+        "moves": [
+          "SNORE",
+          "PROTECT",
+          "POISON JAB",
+          "ROCK SLIDE"
+        ],
+        "catturato": "26/04/2026"
+      }
+    },
+    "ultimaCattura": 1777233435161
+  }
+}
