@@ -406,7 +406,7 @@ Este proyecto está liberado bajo licencia [MIT](LICENSE)
 
 **💻 JavaScript | Python Developer**
 
-📱 **WhatsApp:** +39 350 833 7404
+📱 **WhatsApp:** +39 389 243 0108
 
 **© 2024 333-Bot - All Rights Reserved**
 
