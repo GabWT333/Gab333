@@ -11,7 +11,7 @@
 
 ### ⚡ Powered by Advanced AI Technology
 
-.[![Sito Web].
+[![Sito Web]
 .(https://img.shields.io/badge/333wt.it-00ffd2?style=for-the-badge&logo=googlechrome&logoColor=000000).].
 .(https://333wt.it/).
 
