@@ -8,10 +8,26 @@
 [![Español](https://img.shields.io/badge/🇪🇸_Español-yellow?style=for-the-badge)](#-español)
 
 <img src="https://qu.ax/Um17w" width="200"/>
+<div align="center">
 
-### ⚡ Powered by Advanced AI Technology
+# 🌙 333-Bot
+### Next Generation WhatsApp Bot
 
+[
 
+![Italiano](https://img.shields.io/badge/🇮🇹_Italiano-blue?style=for-the-badge)
+
+](#-italiano) [
+
+![English](https://img.shields.io/badge/🇬🇧_English-red?style=for-the-badge)
+
+](#-english) [
+
+![Español](https://img.shields.io/badge/🇪🇸_Español-yellow?style=for-the-badge)
+
+](#-español)
+
+<img src="https://qu.ax/Um17w" width="200"/>
 
 ### ⚡ Powered by Advanced AI Technology
 
@@ -45,6 +61,42 @@
 ![Discord](https://img.shields.io/badge/Discord-Server-5865F2?style=for-the-badge&logo=discord&logoColor=white)
 
 ](#)
+
+[
+
+![Stars](https://img.shields.io/github/stars/GabWT333/Gab333?style=for-the-badge&logo=github&color=yellow)
+
+](https://github.com/GabWT333/Gab333/stargazers)
+[
+
+![Forks](https://img.shields.io/github/forks/GabWT333/Gab333?style=for-the-badge&logo=github&color=blue)
+
+](https://github.com/GabWT333/Gab333/network/members)
+[
+
+![Repo Size](https://img.shields.io/github/repo-size/GabWT333/Gab333?style=for-the-badge&logo=github&color=green)
+
+](https://github.com/GabWT333/Gab333)
+[
+
+![Open Source](https://img.shields.io/badge/Open_Source-❤️-ff69b4?style=for-the-badge)
+
+](https://github.com/GabWT333/Gab333)
+[
+
+![Maintained](https://img.shields.io/badge/Maintained-Yes-success?style=for-the-badge)
+
+](https://github.com/GabWT333/Gab333/graphs/commit-activity)
+
+<img src="https://qu.ax/j6ZJa" width="600"/>
+
+---
+
+**✨ Features:** Ultra Fast | 🤖 AI Powered | 🔒 Secure | 🆓 Open Source
+
+**💻 Built with:** JavaScript | Python
+
+</div>
 
 [![Stars](https://img.shields.io/github/stars/GabWT333/Gab333?style=for-the-badge&logo=github&color=yellow)](https://github.com/GabWT333/Gab333/stargazers)
 [![Forks](https://img.shields.io/github/forks/GabWT333/Gab333?style=for-the-badge&logo=github&color=blue)](https://github.com/GabWT333/Gab333/network/members)
