@@ -123,10 +123,11 @@ Hai problemi? Ecco come ricevere aiuto:
 1. 📖 Controlla la [Wiki](https://github.com/GabWT333/Gab333/wiki)
 2. 🐛 Apri una [Issue](https://github.com/GabWT333/Gab333/issues)
 3. 💬 Unisciti al nostro [Canale WhatsApp](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
-4. 📱 Contattami su WhatsApp: [+39 350 833 7404](https://wa.me/393508337404)
+4. 📱 Contattami su WhatsApp: [+39 389 243 0108](https://wa.me/393892430108)
 5. 📷 Seguimi su Instagram: [@insta_gqbri](https://instagram.com/insta_gqbri)
 6. 💬 Unisciti al canale Telegram
 7. 🎮 Entra nel server Discord
+8. 🔬 Sito web https://333wt.it
 
 ---
 
@@ -242,10 +243,11 @@ Having problems? Here's how to get help:
 1. 📖 Check the [Wiki](https://github.com/GabWT333/Gab333/wiki)
 2. 🐛 Open an [Issue](https://github.com/GabWT333/Gab333/issues)
 3. 💬 Join our [WhatsApp Channel](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
-4. 📱 Contact me on WhatsApp: [+39 350 833 7404](https://wa.me/393508337404)
+4. 📱 Contact me on WhatsApp: [+39 389 243 0108](https://wa.me/393892430108)
 5. 📷 Follow me on Instagram: [@insta_gqbri](https://instagram.com/insta_gqbri)
 6. 💬 Join our Telegram channel
 7. 🎮 Join our Discord server
+8. 🔬 Site Web https://333wt.it
 
 ---
 
@@ -361,10 +363,11 @@ yarn start
 1. 📖 Consulta la [Wiki](https://github.com/GabWT333/Gab333/wiki)
 2. 🐛 Abre un [Issue](https://github.com/GabWT333/Gab333/issues)
 3. 💬 Únete a nuestro [Canal de WhatsApp](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
-4. 📱 Contáctame en WhatsApp: [+39 350 833 7404](https://wa.me/393508337404)
+4. 📱 Contáctame en WhatsApp: [+39 389 243 0108](https://wa.me/393892430108)
 5. 📷 Sígueme en Instagram: [@insta_gqbri](https://instagram.com/insta_gqbri)
 6. 💬 Únete al canal de Telegram
 7. 🎮 Únete al servidor de Discord
+8. 🔬 Únete al Site web https://333wt.it/
 
 ---
 
