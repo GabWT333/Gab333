@@ -13,14 +13,38 @@
 
 
 
+### ⚡ Powered by Advanced AI Technology
+
+[
+
 ![Sito Web](https://img.shields.io/badge/333wt.it-00ffd2?style=for-the-badge&logo=googlechrome&logoColor=000000)
 
-(https://333wt.it)
-[![WhatsApp Channel](https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
-[![GitHub](https://img.shields.io/badge/GitHub-GabWT333-black?style=for-the-badge&logo=github)](https://github.com/GabWT333)
-[![Instagram](https://img.shields.io/badge/Instagram-insta__gqbri-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/insta_gqbri)
-[![Telegram](https://img.shields.io/badge/Telegram-Channel-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](#)
-[![Discord](https://img.shields.io/badge/Discord-Server-5865F2?style=for-the-badge&logo=discord&logoColor=white)](#)
+](https://333wt.it)
+[
+
+![WhatsApp Channel](https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
+
+](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
+[
+
+![GitHub](https://img.shields.io/badge/GitHub-GabWT333-black?style=for-the-badge&logo=github)
+
+](https://github.com/GabWT333)
+[
+
+![Instagram](https://img.shields.io/badge/Instagram-insta__gqbri-E4405F?style=for-the-badge&logo=instagram&logoColor=white)
+
+](https://instagram.com/insta_gqbri)
+[
+
+![Telegram](https://img.shields.io/badge/Telegram-Channel-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
+
+](#)
+[
+
+![Discord](https://img.shields.io/badge/Discord-Server-5865F2?style=for-the-badge&logo=discord&logoColor=white)
+
+](#)
 
 [![Stars](https://img.shields.io/github/stars/GabWT333/Gab333?style=for-the-badge&logo=github&color=yellow)](https://github.com/GabWT333/Gab333/stargazers)
 [![Forks](https://img.shields.io/github/forks/GabWT333/Gab333?style=for-the-badge&logo=github&color=blue)](https://github.com/GabWT333/Gab333/network/members)
