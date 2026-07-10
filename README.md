@@ -11,9 +11,7 @@
 
 ### ⚡ Powered by Advanced AI Technology
 
-[![Sito Web]
-(https://img.shields.io/badge/333wt.it-00ffd2?style=for-the-badge&logo=googlechrome&logoColor=000000)]
-(https://333wt.it/)
+### Sito Web https://333wt.it
 
 [![WhatsApp Channel](https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h)
 [![GitHub](https://img.shields.io/badge/GitHub-GabWT333-black?style=for-the-badge&logo=github)](https://github.com/GabWT333)
